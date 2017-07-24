@@ -1,0 +1,53 @@
+- title('Dodaj nowe opłaty ZUS')
+%h2 Dodaj nowe opłaty ZUS za okres #{l(ZusAmount.last_month, format: '%B %Y').downcase}
+.row
+  .col-sm-6
+    - if @company_payments.present? && @company_payments.first.current_zus_amount.present?
+      .alert.alert-danger
+        %strong Uwaga!
+        System wykrył, że w bazie istnieją już opłaty ZUS dla firm za okres
+        %strong #{l(ZusAmount.last_month, format: '%B %Y').downcase}!
+        %br
+        Aby dokonać zmian w płatnościach przejdź do
+        = link_to 'bieżących opłat', zus_edit_path
+    - if @company_payments.present? && @company_payments.first.before_current_zus_amount.present?
+      .alert.alert-info
+        %strong Uwaga!
+        System automatycznie skopiował płatności ZUS z poprzedniego okresu.
+        %br
+        Aby je przenieść do bieżącego okresu - kliknij w przycisk
+        %strong kopiuj płatności
+        następnie nanieś odpowiednie zmiany
+
+    %p
+      Na tej stronie możesz dodać lub zmienić płatności ZUS, w zależności od tego czy firma zatrudnia paracowników
+      czy nie, w wiadomości zostanie podany odpowiedni termin płatności składek.
+    %p
+      Możesz uzupełnić poniższy formularz, system automatycznie zapisze wpisane kwoty lub możesz pobrać plik CSV
+      a następnie wczytać uzupełniony plik CSV - wcześniej wypełniając kwoty składek w programie Excel lub LibreCalc
+
+  .col-sm-6
+    %p
+      = link_to zus_path(format: :csv), class: 'btn btn-warning' do
+        #{fa_icon 'download'} Pobierz zestawienie CSV
+    %hr
+    %p
+      System przyjmuje pliki w formacie CSV, oddzielony średnikami. Program Excel lub LibreCalc posiada możliwość zapisu
+      plików w tym formacie.
+
+    = render partial: 'shared/upload_form', locals: {upload_url: zus_upload_path}
+%hr
+.row
+  .col-sm-offset-4.col-sm-4
+    = link_to zus_copy_path, class: 'btn btn-danger btn-block', remote: true, method: :post do
+      #{fa_icon 'copy'} Kopiuj płatności do bieżącego okresu
+    .space-10
+- content_for :listing_form do
+  - @company_payments.each do |company|
+    - us = company.before_current_zus_amount.present? ? company.before_current_zus_amount.us : 0.00
+    - uz = company.before_current_zus_amount.present? ? company.before_current_zus_amount.uz : 0.00
+    - fp = company.before_current_zus_amount.present? ? company.before_current_zus_amount.fp : 0.00
+
+    = render partial: 'payment_inputs', locals: {company: company, us: us, uz: uz, fp: fp}
+
+= render 'companies_listing'

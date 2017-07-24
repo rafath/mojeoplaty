@@ -1,0 +1,30 @@
+%section#footer
+  .bottom-menu-inverse
+    .container
+      .row
+        .col-md-6
+          %h3 Moje Opłaty
+          %ul
+            %li= link_to 'Regulamin Usług', terms_path, data: { toggle: 'modal', target: '#terms'}
+            %li= link_to 'Polityka Prywatności', privacy_path, data: { toggle: 'modal', target: '#privacy'}
+          %p
+            Serwis MojeOplaty.pl wykorzystuje Cookies.
+
+        .col-md-6
+          %h3 Dane kontaktowe
+          %p
+            ARM Sp. z o.o.
+            %br
+            #{fa_icon 'map-marker'} &nbsp;ul. Żytnia 12, 16-300 Augustów
+            %br
+            #{fa_icon 'phone'} &nbsp;512 779 001
+            %br
+            #{fa_icon('envelope')} &nbsp;#{mail_to 'hi@mojeoplaty.pl', nil, encode: 'javascript'}
+
+#terms.modal.fade{tabindex: '-1'}
+  .modal-dialog.modal-lg
+    .modal-content
+
+#privacy.modal.fade{tabindex: '-1'}
+  .modal-dialog.modal-lg
+    .modal-content

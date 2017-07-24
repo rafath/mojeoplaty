@@ -1,0 +1,91 @@
+# RAILS_ROOT/config/unicorn.rb
+# Search for "# SET ME!" and replace these with your own settings!.
+
+# Set environment to development unless something else is specified
+env = ENV["RAILS_ENV"] || 'development'
+app_name = 'reminder'
+# RAILS_ROOT = ENV["RAILS_ROOT"] || '/pool/shoople.pl'
+rails_root = ENV["RAILS_ROOT"] || '/var/www/projects/przypominacz.us/reminder_app/'
+
+#if ENV['MY_RUBY_HOME'] && ENV['MY_RUBY_HOME'].include?('rvm')
+#  begin
+#    rvm_path = File.dirname(File.dirname(ENV['MY_RUBY_HOME']))
+#    rvm_lib_path = File.join(rvm_path, 'lib')
+#    $LOAD_PATH.unshift rvm_lib_path
+#    require 'rvm'
+#    #RVM.use_from_path! RAILS_ROOT
+#    #app_root = File.dirname(File.dirname(__FILE__))
+#    RVM.use! RVM.tools.path_identifier(RAILS_ROOT).split("\n")[4]
+#  rescue LoadError
+#    raise "RVM ruby lib is currently unavailable"
+#  end
+#end
+
+ENV['BUNDLE_GEMFILE'] = File.expand_path('../Gemfile', File.dirname(__FILE__))
+require 'bundler/setup'
+
+#pid "#{RAILS_ROOT}/tmp/pids/unicorn.pid"
+pid "/tmp/#{app_name}.pid"
+# See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
+# documentation.
+worker_processes 1 # SET ME!
+
+# listen on both a Unix domain socket and a TCP port,
+# we use a shorter backlog for quicker failover when busy
+listen "/tmp/#{app_name}.sock", :backlog => 1024 # SET ME!
+
+# Preload our app for more speed
+preload_app true
+GC.respond_to?(:copy_on_write_friendly=) and
+    GC.copy_on_write_friendly = true
+# nuke workers after 30 seconds instead of 60 seconds (the default)
+timeout 60
+
+working_directory rails_root
+
+shared_path = '/var/log/unicorn/' # SET ME!
+stderr_path "#{shared_path}#{app_name}.error.log"
+stdout_path "#{shared_path}#{app_name}.access.log"
+
+
+# Production specific settings
+if env == 'production'
+  # Help ensure your application will always spawn in the symlinked
+  # "current" directory that Capistrano sets up.
+  # feel free to point this anywhere accessible on the filesystem
+  user 'webmaster'
+  #shared_path = '/var/log/unicorn/' # SET ME!
+  #stderr_path "#{shared_path}#{app_name}.error.log"
+  #stdout_path "#{shared_path}#{app_name}.access.log"
+end
+
+before_fork do |server, worker|
+  # the following is highly recomended for Rails + "preload_app true"
+  # as there's no need for the master process to hold a connection
+  if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.connection.disconnect!
+  end
+
+  # Before forking, kill the master process that belongs to the .oldbin PID.
+  # This enables 0 downtime deploys.
+  old_pid = "#{rails_root}/tmp/pids/unicorn.pid.oldbin"
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
+    end
+  end
+end
+
+after_fork do |server, worker|
+  # the following is *required* for Rails + "preload_app true",
+  if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.establish_connection
+  end
+  # if preload_app is true, then you may also want to check and
+  # restart any other shared sockets/descriptors such as Memcached,
+  # and Redis. TokyoCabinet file handles are safe to reuse
+  # between any number of forked children (assuming your kernel
+  # correctly implements pread()/pwrite() system calls)
+end

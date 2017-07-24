@@ -1,0 +1,51 @@
+- title('Edycja Danych')
+%h2 Twoje Konto
+.panel.panel-primary
+  .panel-heading
+    %h3.panel-title Dane do konta i faktury
+  .panel-body
+    .msg
+    = semantic_form_for current_user, url: account_update_path, remote: true, method: :patch do |f|
+      = f.inputs 'Dane podstawowe' do
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :firstname
+          .col-xs-12.col-sm-6
+            = f.input :lastname
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :email
+          .col-xs-12.col-sm-6
+            = f.input :phone
+      = f.inputs 'Dane do faktury' do
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :company_name
+          .col-xs-12.col-sm-6
+            = f.input :nip
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :address_1
+          .col-xs-12.col-sm-6
+            = f.input :address_2
+      .row
+        .col-xs-8.col-sm-4.col-sm-offset-4.text-center
+          = f.action :submit, label: ' Zapisz dane ', button_html: { class: 'btn btn-block btn-primary', 'data-disable_with'=> 'Wysyłam'}
+
+
+.panel.panel-danger
+  .panel-heading
+    %h3.panel-title Zmiana hasła do konta
+  .panel-body
+    .pass_msg
+    = semantic_form_for current_user, url: account_change_password_path, remote: true, method: :patch do |f|
+      .row
+        .col-xs-4.col-sm-4
+          = f.input :current_password
+        .col-xs-4.col-sm-4
+          = f.input :password, label: 'Nowe hasło'
+        .col-xs-4.col-sm-4
+          = f.input :password_confirmation
+      .row
+        .col-xs-8.col-sm-offset-4.col-sm-4.text-center
+          = f.action :submit, label: ' Zmień hasło ', button_html: { class: 'btn btn-block btn-danger', 'data-disable_with'=> 'Zmieniam...'}

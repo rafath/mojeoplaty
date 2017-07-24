@@ -1,0 +1,10 @@
+%h2= title
+.msg
+= semantic_form_for @employee, class: 'form-inline', remote: true do |f|
+  %table.table.form
+    %tr
+      %td= f.input :firstname, label: false
+      %td= f.input :lastname, label: false
+      %td= f.input :email, label: false
+      %td= f.input :plain_pass, as: :string, label: false
+      %td= f.action :submit, wrapper_html: {class: 'btn btn-sm btn-success'}

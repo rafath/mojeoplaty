@@ -1,0 +1,10 @@
+%tr{id: "row-#{employee.id}"}
+  %td= employee.firstname
+  %td= employee.lastname
+  %td= employee.email
+  %td= employee.plain_pass
+  %td.options.text-center
+    = link_to edit_employee_path(employee.id), class: 'btn btn-success btn-xs', title: 'edytuj', remote: true do
+      = fa_icon 'pencil'
+    = link_to employee_path(employee.id), class: 'btn btn-danger btn-xs', title: 'usuń', remote: true, method: :delete, 'data-confirm'=> 'Czy na pewno?' do
+      = fa_icon 'trash'

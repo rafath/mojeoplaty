@@ -1,0 +1,17 @@
+%tr
+  %td{class: us > 0 && uz > 0 && fp > 0 ? 'success' : 'danger'}
+    = company.name
+    %br
+    %small= company.email.present? ? company.email : company.phone
+  %td{class: us > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'us', us , class: 'form-control numeric text-right', data: { company: company.id, 'current-val'=> us }, id: "us_#{company.id}"
+      %span.input-group-addon zł
+  %td{class: uz > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'uz', uz, class: 'form-control numeric text-right', data: { company: company.id, 'current-val'=> uz }, id: "uz_#{company.id}"
+      %span.input-group-addon zł
+  %td{class: fp > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'fp', fp, class: 'form-control numeric text-right', data: { company: company.id, 'current-val'=> fp }, id: "fp_#{company.id}"
+      %span.input-group-addon zł

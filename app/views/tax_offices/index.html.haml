@@ -1,0 +1,48 @@
+- title('Wyszukiwarka Urzędów Skarbowych')
+%h2 Wyszukiwarka Urzędów Skarbowych
+%p.text-center
+  Podaj nazwę miejscowości, w którym znajduje się Urząd Skarbowy.
+  Po wyborze odpowiedniego urzędu pojawią się szczegóły.
+  %br
+  ID urzędu możesz wykorzystać w pliku CSV do importu firm.
+
+.row
+  .col-xs-6.col-xs-offset-3
+    = form_tag '' do
+      = select_tag 'tax_office_id', '<option></option>', id: 'company_tax_office_id'
+.row
+  .col-xs-8.col-xs-offset-3
+    #us_info
+
+:javascript
+  $('#company_tax_office_id')
+  .selectize({
+    valueField: 'id',
+    labelField: 'name',
+    searchField: 'name',
+    options: [],
+    create: false,
+    render: {
+      option: function(item, escape) {
+        return '<div>' +
+          item.name
+        + '</div>';
+      }
+    },
+    load: function(query, callback) {
+      if (!query.length) return callback();
+      $.ajax({
+        url: '#{tax_offices_search_path}/' + encodeURIComponent(query) +'.json',
+        type: 'GET',
+        error: function() {
+          callback();
+        },
+        success: function(res) {
+          callback(res);
+        }
+      });
+    }
+    })
+  .change(function(){
+    $('#us_info').load('#{tax_offices_show_path}/'+$(this).val());
+  })

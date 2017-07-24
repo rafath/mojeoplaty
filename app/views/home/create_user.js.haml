@@ -1,0 +1,14 @@
+-if @user.errors.blank?
+  :plain
+    $('.loading_curtain, .msg .alert, .msg .panel').remove();
+    $('.formtastic').slideUp().remove();
+    $('.msg').prepend('<div class="alert alert-block alert-success">Dziękujemy za Twoje zgłoszenie. Na podany adres email wysłaliśmy email aktywacyjny. Sprawdź swoją skrzynkę od nas. <br>W razie braku wiadomości, sprawdź folder spam</div>');
+    $('.msg .alert').highlight();
+
+-else
+  :plain
+    $('.loading_curtain, .msg .panel').remove();
+    $('.msg').prepend('#{show_model_errors(@user)}');
+    $('.msg .panel').highlight();
+
+

@@ -1,0 +1,1088 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de">  <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cobian flat bootstrap landing page</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index,follow">
+	
+    <!-- Start Font -->
+	<link type="text/css" rel="stylesheet" href="fonts/open-sans/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css" /><!-- Font Icon Fontawesome -->
+	<!-- End Font -->
+    
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" /><!-- Bootstrap -->	
+    <link type="text/css" rel="stylesheet" href="css/overwrite.css" /><!-- Overwrite -->
+	
+    <!-- Start Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="css/owl/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl/owl.theme.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl/owl.transitions.css" />
+    
+    <!-- Start Masonry -->
+    <link type="text/css" rel="stylesheet" href="css/masonry.css" />
+    
+    <!-- prettyPhoto -->	
+	<link type="text/css" rel="stylesheet" href="css/prettyPhoto.css">
+    
+    <!-- Start Default -->
+	<link type="text/css" rel="stylesheet" href="css/icons.css" /><!-- Icons -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" /><!-- Overwrite -->
+	<link id="skin" type="text/css" rel="stylesheet" href="skins/default.css" /><!-- Color -->
+	<!-- End Default -->
+    
+    <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css">
+    <![endif]-->
+    <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie8.css">
+    <![endif]-->
+	
+</head>
+
+<body id="home">  
+ 	<!-- Start preloading -->
+	<div id="loading" class="loading-invisible">
+		<div class="loading-center">
+			<div class="loading-center-absolute">
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+			</div>
+			<p>Please wait...</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		  document.getElementById("loading").className = "loading-visible";
+		  var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+		  var oldLoad = window.onload;
+		  var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+		  window.onload = newLoad;
+	</script>
+	<!-- End preloading -->
+    
+ 	<!-- Start demo options -->
+	<div class="demo-panel">
+		<h6>Color options</h6>
+		<ul class="stylechanger tooltips">
+			<li><a id="color1" href="#" data-skin="default.css"></a></li>
+			<li><a id="color2" href="#" data-skin="brown.css"></a></li>				
+			<li><a id="color3" href="#" data-skin="purple.css"></a></li>
+			<li><a id="color4" href="#" data-skin="blue.css"></a></li>	
+			<li><a id="color5" href="#" data-skin="navy.css"></a></li>					
+		</ul>
+		<div class="clearfix"></div>
+		<h6>Index variants</h6>
+		<ul class="layout">
+			<li class="full">
+				<a href="index.html" class="btn btn-default btn-demo">Index multi page alt1</a>
+			</li>
+			<li class="full">
+				<a href="index-alt1.html" class="btn btn-default btn-demo">Index multi page alt2</a>
+			</li>
+			<li class="full">
+				<a href="index-alt2.html" class="btn btn-default btn-demo">Index one page alt1</a>
+			</li>
+			<li class="full">
+				<a href="index-alt3.html" class="btn btn-default btn-demo">Index one page alt2</a>
+			</li>
+		</ul>
+		<div class="clearfix"></div>
+		<h6>Extra page</h6>
+		<ul class="layout">
+			<li>
+				<a href="about.html" class="btn btn-default btn-demo">About</a>
+			</li>
+			<li>
+				<a href="services.html" class="btn btn-default btn-demo">Services</a>
+			</li>
+			<li>
+				<a href="features.html" class="btn btn-default btn-demo">Features</a>
+			</li>
+			<li>
+				<a href="pricing.html" class="btn btn-default btn-demo">Pricing</a>
+			</li>
+			<li>
+				<a href="blog.html" class="btn btn-default btn-demo">Blog</a>
+			</li>
+			<li>
+				<a href="singlepost.html" class="btn btn-default btn-demo">Singlepost</a>
+			</li>
+			<li>
+				<a href="contact.html" class="btn btn-default btn-demo">Contact</a>
+			</li>
+			<li>
+				<a href="icons.html" class="btn btn-default btn-demo">Icons</a>
+			</li>
+			<li>
+				<a href="elements.html" class="btn btn-default btn-demo">Elements</a>
+			</li>
+		</ul>
+	</div>	
+	<a class="openpanel" href="#" title=""><i class="icon icon-32 icon-tools"></i></a>
+	<!-- End demo options --> 
+	 
+    <!-- Start Scroll to top -->
+    <div class="scroll top">
+        <a href="#home"><span class="fa fa-chevron-up"></span></a>
+    </div>
+    <!-- End Scroll to top -->
+	 
+    <!-- Start Scroll to top -->
+    <div class="scroll top">
+        <a href="#home"><span class="fa fa-chevron-up"></span></a>
+    </div>
+    <!-- End Scroll to top -->
+    
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <!-- Start Submenu -->
+        <div class="submenu">
+            <span class="ribbon"></span>
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="sub-link"><span class="fa fa-envelope"></span> info@yourdomain.com </li>
+                    <li class="sub-link"><span class="fa fa-phone"></span> +6221-123-456-789 </li>
+                    <li class="link"><span class="fa fa-lock"></span><a href="#">Register</a> </li>
+                    <li class="link-btn"><a href="#" class="btn btn-primary">Login</a> </li>
+                </ul>
+            </div>
+        </div>    
+        <!-- End Submenu -->
+        
+        <!-- Start Mainmenu -->
+        <div class="mainmenu">
+            <div class="container">            
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">
+                    <img src="images/brand/logo.png" class="logo" alt="">  
+                  </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="myMenu">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+                </div>
+            </div>
+        </div>    
+        <!-- End Mainmenu -->
+    </nav>
+    <!-- End Navigation -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Home -->
+    <section id="AnimatedBg" class="home bg-animate">
+		<div class="home-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<h1 class="title-one">Build your landing page</h1>
+						<h4 class="title-two">One landing page for many purpose</h4>
+						<a href="#" class="btn btn-primary">Get It Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="street"></div>
+    </section>
+    <!-- End Home -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start About -->
+    <section id="about">
+        <div class="container">
+            <!-- Start Title -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 title-section">
+                    <h4 class="title"><span>Who we are</span> Premium landing page only $15</h4>
+                    <div class="line"><i class="icon icon-24 icon-profle"></i></div>
+                </div>
+            </div>
+            <!-- End Title -->
+            <!-- Start Feature One -->
+            <div class="row wrap-feature-one">
+                <div class="col-md-3 col-sm-6 feature-one">
+                    <i class="icon icon-64 icon-magicwand"></i>
+                    <h5 class="title">Magic HTML5</h5>
+                    <p>
+                        Hinc errem volutpat per in, te hinc essent mea. Ei pro corrumpit, elit ullum scripserit eum ad.
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-6 feature-one">
+                    <i class="icon icon-64 icon-tools"></i>
+                    <h5 class="title">Easy To Use</h5>
+                    <p>
+                        Hinc errem volutpat per in, te hinc essent mea. Ei pro corrumpit, elit ullum scripserit eum ad.
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-6 feature-one">
+                    <i class="icon icon-64 icon-easel"></i>
+                    <h5 class="title">Flat Style</h5>
+                    <p>
+                        Hinc errem volutpat per in, te hinc essent mea. Ei pro corrumpit, elit ullum scripserit eum ad.
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-6 feature-one">
+                    <i class="icon icon-64 icon-browser"></i>
+                    <h5 class="title">Cross browser</h5>
+                    <p>
+                        Hinc errem volutpat per in, te hinc essent mea. Ei pro corrumpit, elit ullum scripserit eum ad.
+                    </p>
+                </div>
+            </div>
+            <!-- End Feature One -->
+        </div>
+    </section>
+    <!-- End About -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Description -->
+    <section id="services" class="gray">
+        <div class="container">
+            <div class="row">
+                <!-- Strat Description -->
+                <div class="col-md-7 col-md-push-5 img-desc">
+                    <img src="images/description.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-md-5 col-md-pull-7 content-desc">
+                    <h4>Small description your product</h4>
+                    <p>
+                        Facer velit mel ei, harum feugiat delicatissimi eum ne, ei nominati erroribus temporibus sit. Quo ne aperiri detraxit suscipiantur, just perfecto ut mea. Quo paulo facete mentitum no, has ex alterum repudiandae. Ipsum essent appareat cu vix, dolor mandamus cum
+te. Melius copiosae duo ei, duo eros omnis at.
+                    </p>
+                    <ul class="list-checked">
+                        <li>Facer velit mel ei, harum feugiat</li>
+                        <li>Delicatissimi eum ne, ei nominati</li>
+                        <li>Erroribus temporibus sit</li>
+                        <li>Facete mentitum no has ex alterum</li>
+                    </ul>
+                    <div class="text-left">
+                        <a href="#" class="btn btn-default">Live Demo</a>
+                        <a href="#" class="btn btn-primary">Get It Now</a>
+                    </div>
+                </div>
+                <!-- End Description -->
+            </div>
+        </div>
+    </section>
+    <!-- End Description -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Testimonial -->
+    <div class="testimonial cp-bottom">
+        <div class="bg-primary pattern parallax"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 wrap-testimonial">
+                    <!-- Start Testimonial -->
+                    <div id="testimonial" class="owl-carousel">
+                        <!-- Start Testimoni 01 -->
+                        <div class="item"> 
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 content">
+                                    <blockquote>
+                                        <p>
+                                            Quo ne aperiri detraxit suscipiantur perfecto ut mea. Quo paulo facete mentitum no, has ex alterum repudiandae. Ipsum essent appareat cu vix, dolor mandamus cum.
+                                        </p>
+                                        <footer class="text-right">
+                                            <b>Jhon Doe</b> - <a href="#">ABCD Corp</a>
+                                        </footer>
+                                    </blockquote>
+                                    <img src="images/testimonial/arrow-right.png" class="arrow right" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-4 photo">
+                                    <img src="images/testimonial/people1.png" class="alignright" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Testimoni 01 -->
+                        <!-- Start Testimoni 02 -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-md-push-4 col-sm-push-4 content">
+                                    <blockquote class="right">
+                                        <p>
+                                            Pertinacia consetetur disputationi ut mel, per an erat efficiendi, eos id latine dissentiet appellantur. Graece euripidis maiestatis id sed homero impetus ne per.
+                                        </p>
+                                        <footer>
+                                            <b>Lee in</b> - <a href="#">EFGH Corp</a>
+                                        </footer>
+                                    </blockquote>
+                                    <img src="images/testimonial/arrow-left.png" class="arrow left" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-md-pull-8 col-sm-pull-8 photo">
+                                    <img src="images/testimonial/people2.png" class="alignleft" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Testimoni 02 -->
+                        <!-- Start Testimoni 03 -->
+                        <div class="item"> 
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 content">
+                                    <blockquote>
+                                        <p>
+                                            Vix te quem virtute aliquam, at vel conceptam vituperatoribus. Invenire dissentiet eos ad. Nam cu putent appellantur. Et usu altera mentitum qualisque sit.
+                                        </p>
+                                        <footer class="text-right">
+                                            <b>Cuting RK</b> - <a href="#">IJKL Corp</a>
+                                        </footer>
+                                    </blockquote>
+                                    <img src="images/testimonial/arrow-right.png" class="arrow right" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-4 photo">
+                                    <img src="images/testimonial/people3.png" class="alignright" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Testimoni 03 -->
+                        <!-- Start Testimoni 04 -->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-md-push-4 col-sm-push-4 content">
+                                    <blockquote class="right">
+                                        <p>
+                                            No option voluptua necessitatibus nam. Solum temporibus duo te, pri alia appareat disput ationi no. Novum evertitur at pri periculis consequat temporibus.
+                                        </p>
+                                        <footer>
+                                            <b>Bawon pare</b> - <a href="#">OPQR Corp</a>
+                                        </footer>
+                                    </blockquote>
+                                    <img src="images/testimonial/arrow-left.png" class="arrow left" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-md-pull-8 col-sm-pull-8 photo">
+                                    <img src="images/testimonial/people4.png" class="alignleft" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Testimoni 04 -->
+                        <!-- Start Testimoni 05 -->
+                        <div class="item"> 
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 content">
+                                    <blockquote>
+                                        <p>
+                                            Ne vix verear volumus tractatos, sea enim iriure id. Ex sea nullam periculis reprimique. Sed zril inimicus ne. Usu quando vituperatoribus ei ad sumo congue qui.
+                                        </p>
+                                        <footer class="text-right">
+                                            <b>Nendoll PC</b> - <a href="#">STUW Corp</a>
+                                        </footer>
+                                    </blockquote>
+                                    <img src="images/testimonial/arrow-right.png" class="arrow right" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-4 photo">
+                                    <img src="images/testimonial/people5.png" class="alignright" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Testimoni 05 -->
+                    </div>
+                    <!-- End Testimonial -->
+                </div>
+            </div>
+            <!-- Start Author -->
+            <ul id="author" class="owl-carousel list-author">
+                <li>
+                    <h6>Jhon Doe <small>ABCD Corp</small></h6>
+                </li>
+                <li>
+                    <h6>Lee in <small>EFGH Corp</small></h6>
+                </li>
+                <li>
+                    <h6>Cuting RK <small>IJKLM Corp</small></h6>
+                </li>
+                <li>
+                    <h6>Bawon Pare <small>OPQR Corp</small></h6>
+                </li>
+                <li>
+                    <h6>Nendoll PC <small>STUW Corp</small></h6>
+                </li>
+            </ul>
+            <!-- End Author -->
+            <div class="bg-dark"></div>
+        </div>
+    </div>
+    <!-- End Testimonial -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Features -->
+    <section id="features">
+        <div class="container">
+            <!-- Start Title -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 title-section">
+                    <h4 class="title"><span>Our Features</span> The reason why choose us</h4>
+                    <div class="line"><i class="icon icon-24 icon-trophy"></i></div>
+                </div>
+            </div>
+            <!-- End Title -->
+            <!-- Start Features -->
+            <div class="row wrap-feature-two">
+                <div class="col-md-4">
+                    <!-- Start Feature Two Left -->
+                    <ul class="feature-two left">
+                        <li>
+                            <i class="icon icon-64 icon-tablet"></i>
+                            <h5>Responsive</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="icon icon-64 icon-clipboard"></i>
+                            <h5>Documentation</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="icon icon-64 icon-hourglass"></i>
+                            <h5>24/7 Support</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                    </ul>
+                    <!-- End Feature Two Left -->
+                </div>
+                <div class="col-md-4">
+                    <img src="images/features/man.png" class="img-responsive img-feature-two" alt="">
+                </div>
+                <div class="col-md-4">
+                    <!-- Start Feature Two Right -->
+                    <ul class="feature-two right">
+                        <li>
+                            <i class="icon icon-64 icon-rocket"></i>
+                            <h5>Flat Design</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="icon icon-64 icon-gamecontroller"></i>
+                            <h5>Easy to use</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                        <li>
+                            <i class="icon icon-64 icon-interstate"></i>
+                            <h5>Plag & play</h5>
+                            <p>
+                                Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.
+                            </p>
+                        </li>
+                    </ul>
+                    <!-- End Feature Two Right -->
+                </div>
+            </div>
+            <!-- End Features -->
+        </div>    
+    </section>
+    <!-- End Features -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Pricing -->
+    <section id="pricing" class="gray">
+        <div class="container">
+            <!-- Start Title -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 title-section">
+                    <h4 class="title"><span>Pricing Table</span> Choose download package</h4>
+                    <div class="line"><i class="icon icon-24 icon-clipboard"></i></div>
+                </div>
+            </div>
+            <!-- End Title -->
+            <!-- Start Pricing -->
+            <div class="row wrap-price">
+                <div class="col-md-3">
+                    <!-- Start Pricing Info -->
+                    <div class="table-price info">
+                        <div class="title-price">
+                            <h4>Basic</h4>
+                        </div>
+                        <div class="price">
+                            <h2><span>$</span>12<small class="point">.99</small></h2>
+                        </div>
+                        <ul class="list-feature">
+                            <li class="current"><strong>Compress</strong> file</li>
+                            <li><strong>Photo</strong> not include</li>
+                            <li class="current"><strong>PSD</strong> Included</li>
+                            <li><strong>No</strong> Update</li>
+                            <li class="current"><strong>No</strong> Support</li>
+                        </ul>
+                        <div class="footer-price">
+                            <a href="#" class="btn btn-info">Get It Now</a>
+                        </div>
+                    </div>
+                    <!-- End Pricing Info -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Start Pricing Success -->
+                    <div class="table-price success">
+                        <div class="title-price">
+                            <h4>Premium</h4>
+                        </div>
+                        <div class="price">
+                            <h2><span>$</span>14<small class="point">.99</small></h2>
+                        </div>
+                        <ul class="list-feature">
+                            <li class="current"><strong>Compress</strong> file</li>
+                            <li><strong>Photo</strong> include</li>
+                            <li class="current"><strong>PSD</strong> Included</li>
+                            <li><strong>No</strong> Update</li>
+                            <li class="current"><strong>No</strong> Support</li>
+                        </ul>
+                        <div class="footer-price">
+                            <a href="#" class="btn btn-success">Get It Now</a>
+                        </div>
+                    </div>
+                    <!-- End Pricing Success -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Start Pricing Danger -->
+                    <div class="table-price danger">
+                        <div class="title-price">
+                            <h4>Business</h4>
+                        </div>
+                        <div class="price">
+                            <h2><span>$</span>19<small class="point">.99</small></h2>
+                        </div>
+                        <ul class="list-feature">
+                            <li class="current"><strong>Uncompress</strong> file</li>
+                            <li><strong>Photo</strong> include</li>
+                            <li class="current"><strong>PSD</strong> Included</li>
+                            <li><strong>File</strong> Update</li>
+                            <li class="current"><strong>No</strong> Support</li>
+                        </ul>
+                        <div class="footer-price">
+                            <a href="#" class="btn btn-danger">Get It Now</a>
+                        </div>
+                    </div>
+                    <!-- End Pricing Danger -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Start Pricing Warning -->
+                    <div class="table-price warning">
+                        <div class="title-price">
+                            <h4>Developer</h4>
+                        </div>
+                        <div class="price">
+                            <h2><span>$</span>24<small class="point">.99</small></h2>
+                        </div>
+                        <ul class="list-feature">
+                            <li class="current"><strong>Uncompress</strong> file</li>
+                            <li><strong>Photo</strong> include</li>
+                            <li class="current"><strong>PSD</strong> Included</li>
+                            <li><strong>File</strong> Update</li>
+                            <li class="current"><strong>24/7</strong> Support</li>
+                        </ul>
+                        <div class="footer-price">
+                            <a href="#" class="btn btn-warning">Get It Now</a>
+                        </div>
+                    </div>
+                    <!-- End Pricing Danger -->
+                </div>
+            </div>
+            <!-- End Pricing -->
+        </div>
+    </section>
+    <!-- End Pricing -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Work It -->
+    <div class="dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- Start Feature Three -->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 feature-three">
+                            <div class="img-feature">
+                                <span class="count">1</span>
+                                <i class="icon icon-64 icon-download"></i>
+                            </div>
+                            <h5>Download</h5>
+                            <p>Ad nostrum consetetur scribentur</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 feature-three">
+                            <div class="img-feature">
+                                <span class="count">2</span>
+                                <i class="icon icon-64 icon-tools"></i>
+                            </div>    
+                            <h5>Instal App</h5>
+                            <p>Ad nostrum consetetur scribentur</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 feature-three">
+                            <div class="img-feature">
+                                <span class="count">3</span>
+                                <i class="icon icon-64 icon-tablet"></i>
+                            </div>    
+                            <h5>Ready To Use</h5>
+                            <p>Ad nostrum consetetur scribentur</p>
+                        </div>
+                    </div>
+                    <!-- End Feature Three -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Work It -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Gellery -->
+    <section>
+        <div class="container">
+            <!-- Start Title -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 title-section">
+                    <h4 class="title"><span>Gallery</span> App image screenshot</h4>
+                    <div class="line"><i class="icon icon-24 icon-image"></i></div>
+                </div>
+            </div>
+            <!-- End Title -->
+            <!-- Start gallery filter  -->
+            <ul class="filter-items">
+                <li data-filter="" class="active">All</li>
+                <li data-filter="photo">Photo</li>
+                <li data-filter="app">App</li>
+                <li data-filter="design">Design</li>
+                <li data-filter="graphic">Graphic</li>
+            </ul>
+            <!-- End gallery filter -->
+            <!-- Start Images Gallery -->
+            <div class="row">
+                <div id="gallery" class="masonry  gallery">
+                    <div class="grid-sizer col-md-3 col-sm-4 col-xs-12"></div>
+                    <div data-filter="graphic" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img01.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img01.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="photo" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img02.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img02.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="app" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img03.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img03.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="design" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img04.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img04.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="app" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img05.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img05.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="photo" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img06.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img06.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="graphic" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img07.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img07.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="app" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img08.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img08.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="design" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img09.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img09.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="graphic" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img10.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img10.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="design" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img11.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img11.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-filter="photo" class="grid-item col-md-3 col-sm-4 col-xs-12">
+                        <div class="wrap-gallery">
+                            <div class="img-wrapper">
+                                <a href="images/gallery/zoom/img12.jpg" class="hover zoom"  data-pretty="prettyPhoto"></a>
+                                <img src="images/gallery/img12.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="title-gallery">
+                                <h5><a href="#">Greaci appetere</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Images Gallery -->
+        </div>
+    </section>
+    <!-- End Gellery -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Article -->
+    <section id="blog" class="gray">
+        <div class="container">
+            <!-- Start Title -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 title-section">
+                    <h4 class="title"><span>Last Article</span> Latest article from blog</h4>
+                    <div class="line"><i class="icon icon-24 icon-compose"></i></div>
+                </div>
+            </div>
+            <!-- End Title -->
+			
+			<!-- Start Blog -->
+            <div class="row">
+                <div id="post" class="masonry wrap-post">
+                    <div class="grid-sizer col-md-6 col-sm-12 col-xs-12"></div>
+                    <div class="grid-item col-md-6 col-sm-12 col-xs-12">
+                        <!-- Start Article 01 -->
+                        <div class="row post">
+                            <div class="col-md-6 col-sm-6 img-post">
+                                <img src="images/blog/1.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-6 col-sm-6 content-post">
+                                <h5><a href="#">Omnium habemus det racto an vim</a></h5>
+                                <ul class="meta-post">
+                                    <li><a href="#"><span class="fa fa-calendar"></span> 06/10/2015</a></li>
+                                    <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
+                                    <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
+                                </ul>
+                                <p>
+                                    Habeo vidisse posidonium ex mei. Modo viderer vituperata in has.
+                                </p>
+                                <a href="singlepost.html" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                        <!-- End Article 01 -->
+                    </div>
+                    <div class="grid-item col-md-6 col-sm-12 col-xs-12">
+                        <!-- Start Article 02 -->
+                        <div class="row post current">
+                            <div class="col-md-6 col-sm-6 img-post">
+                                <img src="images/blog/2.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-6 col-sm-6 content-post">
+                                <h5><a href="#">Mei ad iudico appetere ecusabo</a></h5>
+                                <ul class="meta-post">
+                                    <li><a href="#"><span class="fa fa-calendar"></span> 06/10/2015</a></li>
+                                    <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
+                                    <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
+                                </ul>
+                                <p>
+                                    Habeo vidisse posidonium ex mei. Modo viderer vituperata in has.
+                                </p>
+                                <a href="singlepost.html" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                        <!-- End Article 02 -->
+                    </div>
+                    <div class="grid-item col-md-6 col-sm-12 col-xs-12">
+                        <!-- Start Article 03 -->
+                        <div class="row post">
+                            <div class="col-md-6 col-sm-6 col-md-push-6 img-post">
+                                <img src="images/blog/3.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-md-pull-6 content-post">
+                                <h5><a href="#">Civibus inciderint ei vim assum</a></h5>
+                                <ul class="meta-post">
+                                    <li><a href="#"><span class="fa fa-calendar"></span> 06/10/2015</a></li>
+                                    <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
+                                    <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
+                                </ul>
+                                <p>
+                                    Habeo vidisse posidonium ex mei. Modo viderer vituperata in has.
+                                </p>
+                                <a href="singlepost.html" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                        <!-- End Article 03 -->
+                    </div>
+                    <div class="grid-item col-md-6 col-sm-12 col-xs-12">
+                        <!-- Start Article 04 -->
+                        <div class="row post current">
+                            <div class="col-md-6 col-sm-6 col-md-push-6 img-post">
+                                <img src="images/blog/4.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-md-pull-6 content-post">
+                                <h5><a href="#">At nonumy aeterno nam esse</a></h5>
+                                <ul class="meta-post">
+                                    <li><a href="#"><span class="fa fa-calendar"></span> 06/10/2015</a></li>
+                                    <li><a href="#"><span class="fa fa-thumb-tack"></span> App</a></li>
+                                    <li><a href="#"><span class="fa fa-comment-o"></span> 3</a></li>
+                                </ul>
+                                <p>
+                                    Habeo vidisse posidonium ex mei. Modo viderer vituperata in has.
+                                </p>
+                                <a href="singlepost.html" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                        <!-- End Article 04 -->
+                    </div>
+                </div>
+            </div>
+			<!-- End Blog -->
+        </div>
+    </section>
+    <!-- End Article -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Call to action -->
+    <div class="cta-area">
+        <div class="bg-primary pattern parallax"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <!-- Start Call To Action -->
+                    <div class="ct-action">
+                        <h4 class="title-one">Get premium accsess now !</h4>
+                        <h4 class="title-two">Sometimes you need a call to action area</h4>
+                        <a href="#" class="btn btn-warning">Register Now</a>
+                    </div>
+                    <!-- End Call To Action -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Call to action -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Start Footer -->
+    <footer> 
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-item">
+                        <img src="images/brand/logo-footer.png" class="logo-footer" alt="">
+                        <!-- Start Network Social Icon -->
+                        <ul class="social-network">
+                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                        <!-- End Network Social Icon -->
+                    </div>
+                    <div class="col-md-3 footer-item">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-6 col-xs-6">
+                                <!-- Start Link -->
+                                <ul class="footer-link">
+                                    <li><a href="#">Travel</a></li>
+                                    <li><a href="#">Explorers</a></li>
+                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="#">Science</a></li>
+                                    <li><a href="#">Advices</a></li>
+                                </ul>
+                                <!-- End Link -->
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Start Link -->
+                                <ul class="footer-link">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Term Of Service</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                                <!-- Start Link -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-item">
+                        <!-- Start Subscribe -->
+                        <h5 class="title-footer">Subscribe Now</h5>
+                        <p>Hrrem volutpat per in, te hinc essent mea ei pro corrumpit.</p>
+                        <div class="input-group left">
+                            <input type="text" class="form-control form-subscribe" placeholder="Enter Your Email">
+                            <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><span class="fa fa-envelope"></span></button>
+                            </span>
+                        </div>
+                        <!-- End Subscribe -->
+                    </div>
+                    <div class="col-md-3 footer-item">
+                        <!-- Start Twitter Feed -->
+                        <h5 class="title-footer">Twitter Feed</h5>
+                        <div id="tweecool"></div>
+                        <!-- End Twitter Feed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer">
+            2015 &copy; Copyright <a href="#">NCE18CEX</a> - All right reserved
+        </div>
+    </footer>
+    <!-- End Footer -->
+    
+	<!-- START JAVASCRIPT -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing-1.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+    <!-- JavaScript animatedBg -->	
+	<script src="js/animatedBg/animatedBg-setting.js"></script>
+    
+    <!-- Scrollspy -->
+	<script src="js/scrollspy/scrollspy.js"></script>
+    
+    <!-- Owl Script -->
+    <script type="text/javascript" src="js/owl/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/owl/setting.js"></script>
+    
+    <!-- masonry -->
+	<script src="js/masonry/masonry-3.1.4.js"></script>	
+	<script src="js/masonry/masonry.filter.js"></script>
+	<script src="js/masonry/setting.js"></script>
+    
+    <!-- prettyPhoto -->
+	<script src="js/prettyPhoto/jquery.prettyPhoto.js"></script>
+	<script src="js/prettyPhoto/setting.js"></script>
+    
+    <!-- Parallax -->
+	<script src="js/parallax/jquery.parallax-1.1.3.js"></script>
+	<script src="js/parallax/setting.js"></script>
+    
+    <!--[if lte IE 9]>
+    	<script src="js/tweecool/jquery.xdomainrequest.min.js"></script>      
+	<![endif]-->
+	<!-- Twitter Feed -->
+	<script src="js/tweecool/tweecool.js"></script>
+	<script src="js/tweecool/setting.js"></script>
+    
+    <!-- My Script -->
+    <script type="text/javascript" src="js/custom.js"></script>
+	<!-- END JAVASCRIPT -->
+
+	<!-- Theme option-->
+	<script src="js/theme-option/demosetting.js"></script>	
+</body>
+</html>

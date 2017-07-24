@@ -1,0 +1,71 @@
+# Outgoing email settings
+production:
+  delivery_method: :smtp
+  smtp_settings:
+    enable_starttls_auto: :false
+    openssl_verify_mode: none
+    address: smtp.emaillabs.net.pl
+    port: 587
+#    domain: smtp.mandrillapp.com
+    authentication: :plain
+    user_name: ''
+    password: ''
+#production:
+#  delivery_method: :smtp
+#  smtp_settings:
+#    enable_starttls_auto: :false
+#    openssl_verify_mode: none
+#    address: smtp.mandrillapp.com
+#    port: 587
+#    domain: smtp.mandrillapp.com
+#    authentication: :plain
+#    user_name: 'mandrill@zaraz.pl'
+#    password: 'EQB-vAd9RB0rUz_CfOcqMA'
+
+#development:
+#  delivery_method: :smtp
+#  smtp_settings:
+#    enable_starttls_auto: :false
+#    openssl_verify_mode: none
+#    address: smtp.mandrillapp.com
+#    port: 587
+#    domain: smtp.mandrillapp.com
+#    authentication: :plain
+#    user_name: 'mandrill@zaraz.pl'
+#    password: 'EQB-vAd9RB0rUz_CfOcqMA'
+development:
+  delivery_method: :smtp
+  smtp_settings:
+    enable_starttls_auto: :false
+    openssl_verify_mode: none
+    address: smtp.emaillabs.net.pl
+    port: 587
+#    domain: smtp.mandrillapp.com
+    authentication: :plain
+    user_name: ''
+    password: ''
+
+#production:
+#  delivery_method: :smtp
+#  smtp_settings:
+#    enable_starttls_auto: :false
+#    openssl_verify_mode: 'none'
+#    address: mail-out.sisto.pl
+#    port: 587
+#    domain: mail-out.sisto.pl
+#    authentication: :plain
+#    user_name: 'webmaster@mail-out.sisto.pl'
+#    password: 'm4st3r#21'
+
+#0 => array('smtp_host' => '', 'smtp_port' => 587, 'smtp_username' => '', 'smtp_password' => ''),
+#development:
+#  delivery_method: :smtp
+#  smtp_settings:
+#    enable_starttls_auto: :false
+#    openssl_verify_mode: none
+#    address: mail.rafath.be
+#    port: 587
+#    domain: mail.rafath.be
+#    authentication: :plain
+#    user_name: 'mbox1@rafath.be'
+#    password: 'dzYsV9UE1H'

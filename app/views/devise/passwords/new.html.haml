@@ -1,0 +1,25 @@
+.forgot-box.widget-box
+  .widget-body
+    .widget-main
+      %h4.header.red.lighter.bigger
+        %i.ace-icon.fa.fa-key
+        Przypomnij hasło
+      %p
+        Jeśli nie pamiętasz hasła, podaj swój email. Instrukcję zmiany hasła wyślemy na podany adres email.
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form-inline' }) do |f|
+        = devise_error_messages!
+        .text-center
+          .form-group
+            %span.block.input-icon.input-icon-right
+              = f.email_field :email, autofocus: true, placeholder: 'Podaj swój email', class: 'form-control'
+              = fa_icon 'envelope'
+          .form-group
+            = f.button class: 'btn btn-sm btn-danger', type: :submit do
+              = fa_icon 'lightbulb-o'
+              Wyślij
+          .space-4
+    .toolbar.clearfix
+      %div.text-right.white
+        = link_to 'Wróć na stronę logowania', new_session_path(resource_name), class: 'white'
+        = fa_icon 'arrow-right'
+

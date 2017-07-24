@@ -1,0 +1,344 @@
+#encoding: utf-8
+pl:
+  hello: "Witaj"
+  ago: "temu"
+  authorize_access_n: "Proszę zaloguj się lub załóż konto"
+  password_create_n: "Link do zmiany hasła został wysłany na adres %{email}"
+  password_create_e: "Nie mogę znaleźć użytkownika o podanym adresie email. Sprawdź adres i spróbuj jeszcze raz"
+  reset_password_n: "Link do zmiany hasła jest niepoprawny"
+  update_after_forgetting_n: "Hasło zostało poprawnie zmienione"
+  update_after_forgetting_e: "Przepraszamy, wystąpił błąd. Spróbuj jeszcze raz"
+
+  message_success: "Wiadomość została wysłana"
+  message_failure: "Przepraszamy wystąpił błąd. Sprawdź formularz i popraw błędy"
+  logged_in_n: "Witaj %{name}! Cieszymy się, że z nami jesteś! Zyczymy Ci miłego dnia!"
+  logout_n: "Zostałeś poprawnie wylogowany. Do zobaczenia wkrótce"
+  login_failed: "Wystąpił błąd, sprawdź czy poprawnie podałeś email: %{email} i hasło"
+  user_required: "Strona, którą chcesz otworzyć wymaga logowania"
+  user_create_n: "Dziękujemy za założenie konta. Na Twój email wysłaliśmy link aktywacyjny"
+  user_create_e: "Przepraszamy, wystąpił błąd. Spróbuj ponownie jeśli to nie pomoże, skontaktuj się z nami w dziale kontakt"
+  activate_user_n: "Gratulujemy! Twoje konto zostało poprawnie aktywowane!"
+  activate_user_e: "Nie mogliśmy aktywować Twojego konta. Sprawdź swój email, czy link aktywacyjny jest poprawny"
+  activate_user_e1: "Nie mogliśmy aktywować Twojego konta. Jeśli nie aktywowałeś jeszcze konta - skontaktuj się z nami"
+  authorize_access_n: "Proszę zaloguj się albo załóż konto"
+  create_success_n: "%{model} został poprawnie utworzony"
+  update_success_n: "%{model} został poprawnie zapisany"
+  success_one: "%{model} został poprawnie zapisany"
+  fail_one: "%{model} nie został zapisany"
+  success_two: "%{model} zostało poprawnie zapisane"
+  fail_two: "%{model} nie zostało zapisane"
+  success_few: "%{model} zostały poprawnie zapisane"
+  fail_few: "%{model} nie zostały zapisane"
+  form_n: "Dane zostały poprawnie zapisane"
+  form_e: "Przepraszamy, wystąpił błąd. Sprawdź formularz i popraw błędy"
+  logged_in: "Witaj %{name}"
+  sent_password: "Link resetujący hasło został wysłany na email %{email}"
+  invalid_link_reset: "Twój link jest nieaktywny"
+  password_success: "Twoje hasło zostało pomyślnie zmienione"
+  password_failure: "Niestety wystąpił błąd"
+  home: "Strona główna"
+  create_account: "Załóż konto"
+  login: "Zaloguj się"
+  cant_upload: "Przepraszamy, nie możemy wczytać wybranego pliku"
+  please_wait: "Wczytuję..."
+  remove: "usuń"
+  cancel: "Anuluj"
+  toggle_input: zmień
+  rules: Regulamin
+  terms: Polityka prywatności
+  contact: Kontakt
+  user_fill_in: "Witaj! Zanim zaczniesz korzystać z serwisu, proszę uzupełnij pozostałe dane"
+  video_comment_n: "Twoja %{name} została zapisana"
+  no_service_found: Przepraszamy. Nie ma takiego serwisu
+  note_created: Produkt został dodany do notesu
+
+  views:
+    pagination:
+      first: "początek"
+      last: "koniec"
+      previous: "&lt; wstecz"
+      next: "dalej &gt;"
+      truncate: "..."
+
+#  captcha_solution_result: "Podany wynik nie jest poprawny!"
+#  captcha_solution_empty: "Podaj poprawny wynik"
+  number:
+    format:
+      separator: ","
+      delimiter: " "
+      precision: 2
+    currency:
+      format:
+        format: "%n %u"
+        unit: "PLN"
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "bajt"
+            other: "bajty"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+  date:
+    day_names:
+      - Niedziela
+      - Poniedziałek
+      - Wtorek
+      - Środa
+      - Czwartek
+      - Piątek
+      - Sobota
+    abbr_day_names:
+      - nd
+      - pn
+      - wt
+      - śr
+      - czw
+      - pt
+      - sb
+    month_names:
+      -
+      - Styczeń
+      - Luty
+      - Marzec
+      - Kwiecień
+      - Maj
+      - Czerwiec
+      - Lipiec
+      - Sierpień
+      - Wrzesień
+      - Październik
+      - Listopad
+      - Grudzień
+    abbr_month_names:
+      -
+      - sty
+      - lut
+      - mar
+      - kwi
+      - maj
+      - cze
+      - lip
+      - sie
+      - wrz
+      - paź
+      - lis
+      - gru
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%B %Y"
+    order:
+#        - !ruby/symbol year
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+    am: "przed południem"
+    pm: "po południu"
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: około %{count} godziny
+        one: około godziny
+        other: około %{count} godzin
+        many: około %{count} godzin
+      about_x_months:
+        few: około %{count} miesiące
+        one: około miesiąca
+        other: około %{count} miesięce
+        many: około %{count} miesięcy
+      about_x_years:
+        few: około %{count} lata
+        one: około rok
+        other: około %{count} lat
+        many: około %{count} lat
+      almost_x_years:
+        few: prawie %{count} lata
+        one: prawie rok
+        other: prawie %{count} lat
+        many: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_minutes:
+        few: mniej niż %{count} minuty
+        one: mniej niż minutę
+        other: mniej niż %{count} minut
+        many: mniej niż %{count} minut
+      less_than_x_seconds:
+        few: mniej niż %{count} sekundy
+        one: mniej niż sekundę
+        other: mniej niż %{count} sekund
+        many: mniej niż %{count} sekund
+      over_x_years:
+        few: ponad %{count} lata
+        one: ponad rok
+        other: ponad %{count} lat
+        many: ponad %{count} lat
+      x_days:
+        few: ! '%{count} dni'
+        one: 1 dzień
+        other: ! '%{count} dni'
+        many: ! '%{count} dni'
+      x_minutes:
+        few: ! '%{count} minuty'
+        one: 1 minuta
+        other: ! '%{count} minut'
+        many: ! '%{count} minut'
+      x_months:
+        few: ! '%{count} miesiące'
+        one: miesiąc
+        other: ! '%{count} miesięcy'
+        many: ! '%{count} miesięcy'
+      x_seconds:
+        few: ! '%{count} sekundy'
+        one: 1 sekunda
+        other: ! '%{count} sekundy'
+        many: ! '%{count} sekund'
+    prompts:
+      day: Dzień
+      hour: Godzina
+      minute: Minuta
+      month: Miesiąc
+      second: Sekundy
+      year: Rok
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "%{model} nie został zapisany z powodu błędu"
+          other: "%{model} nie został zapisany z powodu %{count} błędów"
+        body: "Błędy dotyczą następujących pól:"
+      messages:
+        inclusion: "nie znajduje się na liście dopuszczalnych opcji"
+        exclusion: "znajduje się na liście zabronionych opcji"
+        invalid: "jest nieprawidłowe"
+        confirmation: "wartości obu pól są różne"
+        accepted: "musi być zaakceptowane"
+        empty: "to pole musi być wypełnione"
+        blank: "to pole musi być wypełnione"
+        too_long: "jest za długie (maksymalnie %{count} znaków)"
+        too_short: "jest za krótkie (minimalnie %{count} znaków)"
+        wrong_length: "jest nieprawidłowej długości"
+        taken: "niestety taka wartość już istnieje"
+        format: "niepoprawny format"
+        not_a_number: "nie jest liczbą"
+        greater_than: "musi być większe niż %{count}"
+        greater_than_or_equal_to: "musi być większe lub równe %{count}"
+        equal_to: "musi być równe %{count}"
+        less_than: "musie być mniejsze niż %{count}"
+        less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
+        odd: "musi być nieparzyste"
+        even: "musi być parzyste"
+        record_invalid: "Wystąpiły błędy: %{errors}"
+        invalid_format: "sprawdź, czy plik jest odpowiedniego formatu"
+        file_smaller_than: "plik jest mniejszy niż %{weight}"
+        file_larger_than: "plik jest większy niż %{weight}"
+
+    models:
+      user: Konto
+      company: Firmy
+      email_message: Wiadomości
+      employee: Pracownicy
+      tax_amount: Opłaty US
+      zus_amount: Opłaty ZUS
+      tax_office: Urzędy Skarbowe
+      invoice: Faktury
+      payroll: Lista płac
+
+    attributes:
+      user:
+        email: Adres email
+        firstname: Imię
+        lastname: Nazwisko
+        phone: Telefon
+        current_password: Aktualne hasło
+        password: Hasło
+        password_confirmation: Potwierdź hasło
+        company_name: Nazwa firmy
+        nip: NIP
+        address_1: Adres firmy
+        address_2: Kod i miejscowość
+        remember_me: Zapamiętaj mnie
+
+      company:
+        tax_office_id: Urząd Skarbowy
+        name: Nazwa firmy
+        email: Email kontaktowy
+        cc_emails: Dodatkowe emaile
+        phone: Telefon
+        vat_type: Podatek VAT
+        tax_type: Rodzaj podatku dochodowego
+        has_employees: Firma zatrudnia pracowników?
+        send_sms: Informuj SMSem
+        contact_person: Osoba kontaktowa
+
+      employee:
+        firstname: imię
+        lastname: nazwisko
+        email: adres email
+        plain_pass: hasło dostępu
+
+  support:
+    array:
+      sentence_connector: "i"
+      skip_last_comma: true
+
+  formtastic:
+    labels:
+      contact:
+        name: Imię i nazwisko
+        email: Twój email
+        content: Treść wiadomości
+        phone: Telefon kontaktowy
+
+    placeholders:
+      user:
+        address_1: np. 3 maja 45/21a
+        address_2: np. 01-230 Warszawa
+
+      company:
+        tax_office_id: Podaj nazwę miejscowości
+        phone: np. 501123321
+        cc_emails: Oddziel adresy przecinkami
+        nip: format XXX-XXX-XX-XX
+
+      contact:
+        name: Imię i nazwisko
+        email: Twój email
+        phone: Telefon kontaktowy
+        content: Treść wiadomości
+
+      employee:
+        firstname: imię
+        lastname: nazwisko
+        email: email
+        plain_pass: hasło
+
+
+    actions:
+      create: ' Dodaj '
+      update: ' Zapisz '
+      cancel: ' Anuluj '
+      send: ' Wyślij '
+      reply: ' Odpowiedz '
+      add_user: ' Zgłoś firmę '

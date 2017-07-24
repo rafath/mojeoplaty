@@ -1,0 +1,62 @@
+- title('Lista Firm')
+%h2 Lista firm
+.row
+  .col-xs-3
+    %p
+      = link_to companies_path(format: :csv), class: 'btn btn-warning btn-block' do
+        #{fa_icon 'download'} Pobierz listę firm
+  .col-xs-9
+    %p
+      Poniżej możesz wczytać listę firm. System przyjmuje pliki CSV (zapisane w programie Excel lub LibreCalc)
+    = render partial: 'shared/upload_form', locals: {upload_url: upload_companies_path}
+%hr
+.mail-info
+%table#data_table.table.table-bordered.table-hovered.table-striped
+  %thead
+    %tr
+      %th nazwa
+      %th nip
+      %th dane kontakowe
+      %th podatki
+      %th.text-center
+        = link_to new_company_path, class: 'btn btn-info btn-sm btn-block' do
+          #{fa_icon 'plus'} Dodaj nową firmę
+  %tbody
+    - @companies.each do |company|
+      %tr{id: "row-#{company.id}"}
+        %td
+          = company.name
+          %br
+          %small
+            = company.tax_office.name
+        %td
+          = company.formatted_nip
+          %br
+          = company.regon
+        %td
+          - if company.contact_person.present?
+            = company.contact_person
+            %br
+          = company.email
+          %br
+          = company.phone
+        %td
+          = company.tax_type
+          %br
+          = company.vat_type
+        %td.options.text-center
+          = link_to edit_company_path(company.id), class: 'btn btn-success btn-sm', title: 'edytuj dane firmy' do
+            = fa_icon 'pencil'
+          = link_to zus_renderer_path(company.token, format: :pdf), class: 'btn btn-warning btn-sm', title: 'Druk Przelewu ZUS', target: '_blank' do
+            = fa_icon 'bank'
+          = link_to tax_renderer_path(company.token, format: :pdf), class: 'btn btn-warning btn-sm', title: 'Druk Przelewu Podatku Dochodowego', target: '_blank' do
+            = fa_icon 'money'
+          = link_to vat_renderer_path(company.token, format: :pdf), class: 'btn btn-warning btn-sm', title: 'Druk Przelewu Podatku VAT', target: '_blank' do
+            = fa_icon 'link'
+          = link_to mail_renderer_path(company.token), class: 'btn btn-warning btn-sm set_disabled', title: 'Wyślij testowego maila do siebie', remote: true do
+            = fa_icon 'envelope'
+          = link_to company_path(company.id), class: 'btn btn-danger btn-sm', title: 'usuń', method: :delete, 'data-confirm'=> 'Czy na pewno?', remote: true do
+            = fa_icon 'trash'
+
+
+= paginate @companies

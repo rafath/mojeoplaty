@@ -1,0 +1,86 @@
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body {
+  font-family: Arial, Helvetica, Sans-Serif, sans-serif;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, input, textarea, p, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+.col-xs-1 { width: 8.33333% }
+.col-xs-2 { width: 16.6667% }
+.col-xs-3 { width: 25% }
+.col-xs-4 { width: 33.3333% }
+.col-xs-5 { width: 41.6667% }
+.col-xs-6 { width: 50% }
+.col-xs-7 { width: 58.3333% }
+.col-xs-8 { width: 66.6667% }
+.col-xs-9 { width: 75% }
+.col-xs-10 { width: 83.3333% }
+.col-xs-11 { width: 91.6667% }
+.col-xs-12 { width: 100% }
+
+@media print {
+  .pdf-hidden {
+    display: none;
+  }
+  .pb-before {
+    page-break-before: always !important;
+  }
+  .pbiavoid {
+    page-break-inside: avoid !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+}
+
+/* ------------- renderer --------------*/
+
+.zus_container {
+  background: image-url('transfer_zus.png') no-repeat 0 0;
+  width: 100%;
+  min-height: 1400px;
+  position: relative;
+}
+.zus_container div {
+  border: 1px solid #000;
+  position: absolute;
+  font-family: system, sans-serif;
+  font-size: 29px;
+}
+.zus-01 {
+  height: 32px;
+  left: 59px;
+  top: 144px;
+  width: 865px;
+  letter-spacing: 12px;
+}
+

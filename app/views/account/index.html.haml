@@ -1,0 +1,91 @@
+%h2 Witaj #{current_user.firstname}
+-#%span.btn.btn-app.btn-sm.btn-light.no-hover
+-#  %span.line-height-1.bigger-170.blue 1,411
+-#  %br/
+-#  %span.line-height-1.smaller-90 Views
+-#%span.btn.btn-app.btn-sm.btn-yellow.no-hover
+-#  %span.line-height-1.bigger-170 32
+-#  %br/
+-#  %span.line-height-1.smaller-90 Followers
+-#%span.btn.btn-app.btn-sm.btn-pink.no-hover
+-#  %span.line-height-1.bigger-170 4
+-#  %br/
+-#  %span.line-height-1.smaller-90 Projects
+-#%span.btn.btn-app.btn-sm.btn-grey.no-hover
+-#  %span.line-height-1.bigger-170 23
+-#  %br/
+-#  %span.line-height-1.smaller-90 Reviews
+-#%span.btn.btn-app.btn-sm.btn-success.no-hover
+-#  %span.line-height-1.bigger-170 7
+-#  %br/
+-#  %span.line-height-1.smaller-90 Albums
+-#%span.btn.btn-app.btn-sm.btn-primary.no-hover
+-#  %span.line-height-1.bigger-170 55
+-#  %br/
+-#  %span.line-height-1.smaller-90 Contacts
+.row
+  .col-xs-12.col-sm-6
+    %p
+      Cieszymy się, że zdecydował#{ge(current_user.firstname, :es)} się na skorzystanie z serwisu Moje Opłaty.
+      Jesteśmy pewni, że funkcjonalności, które przygotowaliśmy ułatwią Ci pracę, jeśli będziesz miał#{ge(current_user.firstname, :a)},
+      jakiekolwiek sugestie, to koniecznie skontaktuj się z nami telefonicznie pod numer 512 779 001 lub mailowo #{mail_to 'biuro@mojeoplaty.pl'}
+      i powiedz nam o tym.
+    %p
+      Jest to Twoje pierwsze logowanie, aby efektwynie korzystać z serwisu skorzystaj z naszej krótkiej instrukcji.
+
+    %h3 Przeczytaj to, to nie jest zwykłe bla bla bla...
+
+    %ol
+      %li
+        Najpierw
+        %strong dodaj firmy
+        mozesz wypełnić #{link_to 'formularz', new_company_path} albo stworzyć w Excelu plik CSV z listą firm  - #{link_to 'pobierz plik', companies_path(format: :csv)}.
+        %br
+        %br
+        .alert.alert-warning
+          Do Twoich firm wysyłamy informacje o opłatach. Nie wysyłamy, ani nigdy nie będziemy wysyłać żadnych
+          dodatkowych wiadomości bez Twojej wiedzy ani zgody.
+      %li
+        Następnie możesz
+        %strong dodać pracowników
+        \- jeśli ich zatrudniasz, możesz każdemu pracownikowi #{link_to 'założyć osobne konto', new_employee_path} i przypisać mu firmy, które obsługuje.
+        Jeśli sam#{ge(current_user.firstname)} prowadzisz swoje biuro rachunkowe - nie musisz dodawać pracowników. Ty
+        jako właściciel konta zawsze masz dostęp do wszystkich funkcjonalności.
+      %li
+        W danym miesiącu kalendarzowym możesz dodać
+        %strong #{link_to 'opłaty ZUS', zus_path},
+        czyli składki oraz
+        %strong #{link_to 'opłaty US', taxes_path},
+        czyli podatki CIT/PIT-5(L), PIT-4, PIT-8 i VAT. System automatycznie przypisze odpowiedni okres i termin płatności.
+        Dla przyspieszenia pracy, możesz też skorzystać z możliwości importu/eksportu danych do Excela
+      %li
+        Jeśli zajmujesz się kadrami, to możesz wysyłać do swoich klientów pliki PDF, DOC lub XLS z #{link_to 'listą płac', payrolls_path},
+        wystarczy dany plik przypisać odpowiedniej firmie.
+
+    %p
+      Jeszcze raz dziękujemy za korzystanie z naszych usług, jesteśmy pewni, że nasza aplikacja zaoszczędzi Ci sporo
+      czasu i Ty oraz Twoi klienci będą zadowoleni z dostępnych możliwości.
+  .col-xs-12.col-sm-6
+    .row
+      .col-xs-12.col-sm-6.col-lg-6
+        %h3 Najbliższe terminy
+        = payments_dates
+
+    %hr
+    %h3 Wybierz dział
+    .row
+      .col-xs-12.col-sm-3
+        = link_to 'Opłaty ZUS', zus_path, class: 'btn btn-block btn-success'
+      .col-xs-12.col-sm-3
+        = link_to 'Opłaty US', taxes_path, class: 'btn btn-block btn-purple'
+      .col-xs-12.col-sm-3
+        = link_to 'Lista Płac', payrolls_path, class: 'btn btn-block btn-pink'
+    .hr.hr32.hr-dotted
+    .row
+      .col-xs-12.col-sm-3
+        = link_to 'Pracownicy', employees_path, class: 'btn btn-info btn-block'
+      .col-xs-12.col-sm-3
+        = link_to 'Lista firm', companies_path, class: 'btn btn-orange btn-block'
+      .col-xs-12.col-sm-3
+        = link_to 'Twoje dane', account_edit_path, class: 'btn btn-default btn-block grey'
+

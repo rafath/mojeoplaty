@@ -1,0 +1,21 @@
+- title('Opłaty US')
+%h2 Podatki za okres #{l(TaxAmount.last_month, format: '%B %Y').downcase}
+
+.row
+  .col-sm-4
+    %p
+      Na tej stronie możesz umieścić podatki dochodowe i VAT. W zależności od formy rozliczeń,
+      Twoi klienci otrzymają odpowiednie dane dotyczące typu podatku (cit/pit) oraz numery kont Urzędów Skarbowych.
+
+    %p.text-center
+      = link_to taxes_path(format: :csv), class: 'btn btn-warning' do
+        #{fa_icon 'download'} Pobierz zestawienie CSV
+  .col-sm-8
+    %p
+      System przyjmuje pliki w formacie CSV, oddzielony średnikami lub przecinkami. Program Excel lub LibreCalc posiada
+      możliwość zapisu plików w tym formacie.
+
+    = render partial: 'shared/upload_form', locals: {upload_url: upload_taxes_path}
+
+%hr
+= render 'companies_listing'

@@ -1,0 +1,32 @@
+- title(@company.name)
+%h2= @company.name + ' edycja'
+= render 'form'
+:javascript
+  $('#company_tax_office_id').selectize({
+    valueField: 'id',
+    labelField: 'name',
+    searchField: 'name',
+    options: [{id: '#{@company.tax_office_id}', name: '#{@company.tax_office.full_name}'}],
+    create: false,
+    render: {
+      option: function(item, escape) {
+        return '<div>' +
+          item.name
+        + '</div>';
+      }
+    },
+    load: function(query, callback) {
+      if (!query.length) return callback();
+      $.ajax({
+        url: '#{tax_offices_search_path}/' + encodeURIComponent(query) +'.json',
+        type: 'GET',
+        error: function() {
+          callback();
+        },
+        success: function(res) {
+          callback(res);
+        }
+      });
+    }
+    });
+    $('#company_tax_office_id').selectize()[0].selectize.addItem(#{@company.tax_office_id});

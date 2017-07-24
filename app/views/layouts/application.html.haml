@@ -1,0 +1,105 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %title= yield(:title)
+    %meta{content: @page_description||'MojeOpłaty.pl', name: 'description'}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
+    %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
+    %link{rel: 'shortcut icon', href: asset_path('favicon.ico'), type: 'image/x-icon'}
+
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all'
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext', media: 'all'
+    = stylesheet_link_tag '//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+    -#= javascript_include_tag 'http://localhost:35729/livereload.js?snipver=1'
+    <!-- [if lt IE 9]>
+    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js'
+    <![endif]-->
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'data-turbolinks-track' => true
+    = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', 'data-turbolinks-track' => true
+    = javascript_include_tag '//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js', 'data-turbolinks-track' => true
+    -#= javascript_include_tag '//cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body.skin-1
+    = render 'shared/google'
+    - if is_logged?
+      #navbar.navbar.navbar-default
+        #navbar-container.navbar-container
+          %button#menu-toggler.navbar-toggle.menu-toggler.pull-left{type: 'button'}
+            %span.sr-only Przełącz menu
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .navbar-header.pull-left
+            %a.navbar-brand{:href => '/konto'}
+              = png 'moje-oplaty', alt: 'MojeOplaty.pl', class: 'logo'
+              Moje Opłaty
+          .navbar-buttons.navbar-header.pull-right
+            %ul.nav.ace-nav
+              %li.green.dropdown
+                = link_to zus_path do
+                  = fa_icon 'bank'
+                  Opłaty ZUS #{fa_icon 'caret-down'}
+                %ul.user-menu.dropdown-menu-left.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                  %li
+                    = link_to 'Bieżące opłaty ZUS', zus_edit_path
+                  %li
+                    = link_to 'Dodaj nowe opłaty', zus_path
+              %li.purple
+                = link_to taxes_path do
+                  #{fa_icon 'money' } Opłaty US
+              %li.pink
+                = link_to payrolls_path do
+                  #{fa_icon 'tasks' } Lista Płac
+              %li.light-blue.dropdown
+                = link_to employees_path do
+                  #{fa_icon 'users'} Pracownicy #{fa_icon 'caret-down'}
+                %ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                  %li
+                    = link_to employees_path do
+                      #{fa_icon 'bars'} Lista pracowników
+                  %li
+                    = link_to companies_employees_path do
+                      #{fa_icon 'share-alt'} Przypisz firmy
+              %li.orange.dropdown
+                = link_to companies_path do
+                  #{fa_icon 'building'} Firmy #{fa_icon 'caret-down'}
+                %ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                  %li
+                    = link_to companies_path do
+                      #{fa_icon 'bars'} Lista firm
+                  %li
+                    = link_to new_company_path do
+                      #{fa_icon 'plus'} Dodaj nową firmę
+                  %li
+                    = link_to companies_path(format: :csv) do
+                      #{fa_icon 'download'} Pobierz listę firm
+              %li.grey.dropdown
+                %a(href='#' title='Konto')
+                  #{fa_icon 'user'} Konto #{fa_icon 'caret-down'}
+                %ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                  %li
+                    = link_to account_edit_path do
+                      #{fa_icon 'server'} Twoje dane
+                  -#%li
+                    = link_to account_invoices_path do
+                      #{fa_icon 'money'} Faktury i płatności
+                  %li
+                    = link_to account_edit_path(1) do
+                      #{fa_icon 'key'} Zmień hasło
+                  %li
+                    = link_to destroy_user_session_path, method: :delete do
+                      #{fa_icon 'power-off'} Wyloguj się
+
+    .main-content
+      = render 'shared/breadcrumbs'
+      .page-content
+        = render partial: 'shared/flash', locals: {flash: flash}
+        = yield
+    = render 'shared/footer'
+    = javascript_include_tag 'ace-app', 'data-turbolinks-track' => false

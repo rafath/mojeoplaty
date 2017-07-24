@@ -1,0 +1,39 @@
+- title('Przypisz pracowników do firm')
+%h2 Przypisanie firm do pracowników
+.row
+  .col-xs-6
+    %p
+      Jeśli zatrudniasz pracowników, możesz przypisać do nich odowiednie firmy. Dzięki temu pracownik będzie miał dostęp
+      tylko do przypisanej do niego firmy.
+%hr
+%table.table.table-bordered.table-hovered.table-striped
+  %tr
+    %th Nazwa firmy
+    - @employees.each do |employee|
+      %th #{employee.firstname[0]}. #{employee.lastname}
+  %tbody
+    - @companies.each do |company|
+      %tr{id: "row-#{company.id}"}
+        %td
+          = company.name
+          %br
+          %small
+            = company.formatted_nip
+        - @employees.each do |employee|
+          %td.text-center
+            = check_box_tag "com_emp[#{company.id}][#{employee.id}]", 1, company.employee_ids.include?(employee.id), class: 'emp_checkbox ace ace-switch ace-switch-6', data: { company: company.id, employee: employee.id }
+            %span.lbl
+
+= paginate @companies
+:javascript
+  $('.emp_checkbox').change(function(){
+    $.ajax({
+      type: "PUT",
+      url: '#{assign_employees_path}',
+      data: {c: $(this).attr('data-company'), e: $(this).attr('data-employee'), f: $(this).prop('checked') ? 1 : 0},
+      success: function(e) {
+        //console.log(e);
+      },
+      dataType: 'text'
+    });
+  });

@@ -1,0 +1,23 @@
+%p Dzień dobry #{@user.firstname}!
+
+%p
+  Cieszę się, że zdecydował#{ge(@user.firstname)} się dołączyć do grona użytkowników serwisu i ulatwić sobie pracę :).
+
+%p
+  %strong #{link_to 'Zaloguj się', account_url}
+  do serwisu i przeczytaj instrukcję umieszczoną na głównej stronie - wystarczy
+  przejść krótką konfigurację i system będzie gotowy do pracy.
+
+%p Jeśli jeszcze nie widział#{ge(@user.firstname)} naszego filmiku, zrób to #{link_to 'teraz', 'https://youtu.be/zDJMsIFZMog'}
+
+%p
+  W razie pytań zawsze jesteśmy dostępni, wystarczy do nas napisać lub zadzwonić.
+
+%p
+  Pozdrawiam
+  %br
+  Rafath Khan
+  %br
+  512 779 001
+
+

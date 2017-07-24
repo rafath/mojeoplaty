@@ -1,0 +1,28 @@
+%table#data_table.table.table-bordered.table-hovered.table-striped
+  %thead
+    %tr
+      %th firma
+      %th ubez. społeczne (51)
+      %th ubez. zdrowotne. (52)
+      %th FP i FGŚP (53)
+  %tbody
+    = yield :listing_form
+:javascript
+  $('.numeric')
+  .click(function(){
+    $(this).select();
+  })
+  .keyup(function(){
+    $(this).val($(this).val().replace(/[^0-9,.]/gi, '').replace(',', '.'));
+  }).blur(function() {
+    if ($(this).val() > 0 && $(this).attr('data-current-val') != $(this).val()) {
+      $(this).attr('data-current-val', $(this).val())
+      $(this).addClass('loading');
+      elem = $(this)
+      data = {company: $(this).attr('data-company'), type: $(this).attr('name'), value: $(this).val()}
+      $.post('#{zus_save_path}', data, function(res){
+      elem.removeClass('loading');
+      elem.closest('td').removeClass('danger').addClass('success');
+      })
+    }
+  })

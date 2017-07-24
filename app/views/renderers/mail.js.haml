@@ -1,0 +1,4 @@
+:plain
+  $('.mail-info').prepend('<div class="alert alert-success">Testowy email został wysłany na adres #{current_user.email}</div>');
+  $('.mail-info .alert').highlight();
+  setTimeout("$('.alert').slideUp('slow');", 5000);

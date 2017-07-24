@@ -1,0 +1,15 @@
+- if @employee.errors.blank?
+  :plain
+    $('.loading_curtain, .msg .alert, .msg .panel').remove();
+    $('.msg').prepend('<div class="alert alert-block alert-success">Pracownik został dodany</div>');
+    $('table.form input.form-control').each(function(){ $(this).val('')});
+    $('table#employees tbody').prepend('#{escape_javascript(render(partial: 'employee', locals: {employee: @employee}))}');
+    $('.msg .alert').highlight();
+    $('tr#row-#{@employee.id}').highlight();
+
+-else
+  :plain
+    $('.loading_curtain, .msg .panel').remove();
+    $('.msg').prepend('#{show_model_errors(@employee)}');
+    $('.msg .panel').highlight();
+

@@ -1,0 +1,27 @@
+- title('Lista Płac')
+%h2 Listy płac za okres #{l(Time.now, format: '%B %Y').downcase}
+%p
+  Jeśli wysyłasz swoim klientom listy płac, na tej stronie możesz wczytać plik PDF lub Excel z listą płac. Pliki zostaną
+  wysłane mailem do Twoich klientów.
+
+.msg
+%table#data_table.table.table-bordered.table-hovered.table-striped
+  %thead
+    %tr
+      %th firma
+      %th plik
+      %th lista płac
+  %tbody
+    - @companies.each do |company|
+      %tr
+        %td
+          = company.name
+          %br
+          %small= company.email.present? ? company.email : company.phone
+        %td(id="file-#{company.id}")
+          - if company.payroll.present?
+            = link_to 'pobierz', download_payrolls_path(company.id, company.payroll.id), class: 'btn btn-xs btn-warning'
+        %td
+          = form_tag upload_payrolls_path(company.id), remote: true, multipart: true, class: 'upload-form' do
+            = file_field_tag 'payroll_file', class: 'upload-payroll id-input-file', id: "upload_#{company.id}", data: { company: company.id }
+

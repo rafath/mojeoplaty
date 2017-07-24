@@ -1,0 +1,31 @@
+- title('Dodaj nową firmę')
+%h2 Dodaj nową firmę
+= render 'form'
+:javascript
+  $('#company_tax_office_id').selectize({
+    valueField: 'id',
+    labelField: 'name',
+    searchField: 'name',
+    options: [],
+    create: false,
+    render: {
+      option: function(item, escape) {
+        return '<div>' +
+          item.name
+        + '</div>';
+      }
+    },
+    load: function(query, callback) {
+      if (!query.length) return callback();
+      $.ajax({
+        url: '#{tax_offices_search_path}/' + encodeURIComponent(query) +'.json',
+        type: 'GET',
+        error: function() {
+          callback();
+        },
+        success: function(res) {
+          callback(res);
+        }
+      });
+    }
+    });

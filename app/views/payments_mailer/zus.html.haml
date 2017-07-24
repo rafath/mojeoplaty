@@ -1,0 +1,47 @@
+%p Dzień dobry
+%p
+  Poniżej przesyłam informację o Składkach ZUS.
+  %br
+  Termin zapłaty składek:
+  %strong #{@payment.payment_day} #{l(Time.now, format: '%B').downcase}
+
+%p
+  W załączniku znajdują się gotowe druki przelewów.
+%br
+%br
+%table
+  - if @payment.us > 0
+    %tr
+      %td
+        Ubezpieczenie Społeczne
+        %br
+        = @payment.us_account
+      %td(align='right')
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.us)
+  - if @payment.uz > 0
+    %tr
+      %td
+        Ubezpieczenie Zdrowotne
+        %br
+        = @payment.uz_account
+      %td(align='right')
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.uz)
+  - if @payment.fp > 0
+    %tr
+      %td(align='right')
+        Fundusz Pracy
+        %br
+        = @payment.fp_account
+      %td
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.fp)
+
+%p
+  Pozdrawiam
+  %br
+  = @payment.user.company_name

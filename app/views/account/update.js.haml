@@ -1,0 +1,10 @@
+- if current_user.errors.blank?
+  :plain
+    $('.loading_curtain, .msg .alert, .msg .panel').remove();
+    $('.msg').prepend('<div class="alert alert-block alert-success">Dane zostały poprawnie zapisane</div>');
+    $('.msg .alert').highlight();
+- else
+  :plain
+    $('.loading_curtain, .msg .panel').remove();
+    $('.msg').prepend('#{show_model_errors(current_user)}');
+    $('.msg .panel').highlight();

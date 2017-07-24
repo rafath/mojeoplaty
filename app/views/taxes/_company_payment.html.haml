@@ -1,0 +1,25 @@
+- vat = company_payment.current_tax_amount.present? ? company_payment.current_tax_amount.vat : 0.00
+- income_tax = company_payment.current_tax_amount.present? ? company_payment.current_tax_amount.income_tax : 0.00
+- pit_4 = company_payment.current_tax_amount.present? ? company_payment.current_tax_amount.pit_4 : 0.00
+- pit_8 = company_payment.current_tax_amount.present? ? company_payment.current_tax_amount.pit_8 : 0.00
+%tr
+  %td
+    = company_payment.name
+    %br
+    %small= company_payment.email.present? ? company_payment.email : company_payment.phone
+  %td{class: income_tax > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'income_tax', income_tax , class: 'form-control numeric text-right', data: { company: company_payment.id, 'current-val'=> income_tax }, id: "income_tax_#{company_payment.id}"
+      %span.input-group-addon zł
+  %td{class: pit_4 > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'pit_4', pit_4, class: 'form-control numeric text-right', data: { company: company_payment.id, 'current-val'=> pit_4 }, id: "pit_4_#{company_payment.id}"
+      %span.input-group-addon zł
+  %td{class: pit_8 > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'pit_8', pit_8, class: 'form-control numeric text-right', data: { company: company_payment.id, 'current-val'=> pit_8 }, id: "pit_8_#{company_payment.id}"
+      %span.input-group-addon zł
+  %td{class: vat > 0 ? 'success' : 'danger'}
+    .input-group
+      = text_field_tag 'vat', vat, class: 'form-control numeric text-right', data: { company: company_payment.id, 'current-val'=> vat }, id: "vat_#{company_payment.id}"
+      %span.input-group-addon zł

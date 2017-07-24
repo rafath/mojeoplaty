@@ -1,0 +1,19 @@
+!!!
+%html{lang: 'pl'}
+  %head
+
+    %title MojeOplaty
+    %meta{charset: 'utf-8'}
+    -#%meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    :css
+      body, table, td, p { line-height: 140%; font-family: Arial, Tahoma, Verdana, sans-serif; }
+  %body{:bgcolor => "#f5f5f5", :leftmargin => '0', :marginheight => '0', :marginwidth => '0', :offset => '0', topmargin: '0'}
+    %table{bgcolor: '#ffffff', cellpadding: '7', cellspacing: '0', style: 'line-height: 140%; font-family: Verdana, Times New Roman, Courier New, Helvetica, Arial, sans-serif; color: #000000;', width: '90%'}
+      %tr
+        %td{style: "line-height: 140%; font-family: Verdana, Times New Roman, Courier New, Helvetica, Arial, sans-serif; color: #000000;"}
+          =yield
+      -#%tr
+        %td{:style => "font-size: 11px; line-height: 22px; font-family: Arial; color: #666666;"}
+          Nadawcą wiadomości jest #{link_to 'MojeOplaty', root_url}.
+          %br
+          %br

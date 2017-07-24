@@ -1,0 +1,12 @@
+.msg
+= form_tag upload_url, multipart: true, class: 'upload-form form-inline', authenticity_token: true do
+  .row
+    .col-xs-5
+      = label_tag 'Plik CSV'
+      = file_field_tag 'csv', class: 'id-input-file'
+    .col-xs-4
+      = label_tag 'Separator pól'
+      = select_tag 'csv_settings[col_sep]', options_for_select([['średnik (;)', ';'],['przecinek (,)', ',']]), class: 'form-control input-sm'
+    .col-xs-3
+      %br
+      = submit_tag 'wyślij', class: 'btn btn-success btn-sm'

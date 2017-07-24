@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title MojeOplaty.pl
+    %meta{name: 'pdfkit-footer-font-size ', content: '8'}
+    = stylesheet_link_tag 'pdf', media: 'all'
+  %body
+    .container
+      = yield

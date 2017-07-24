@@ -1,0 +1,4 @@
+= link_to edit_link, class: 'btn btn-success btn-sm', title: 'edytuj dane firmy' do
+  = fa_icon 'pencil'
+= link_to delete_link, class: 'btn btn-danger btn-sm', title: 'usuń', method: :delete, 'data-confirm'=> 'Czy na pewno?', remote: true do
+  = fa_icon 'trash'

@@ -1,0 +1,12 @@
+﻿Raport wyszukiwanych haseł (16.11.2015-15.12.2015)
+Wyszukiwane hasło	Typ dopasowania	Dodane/wykluczone	Kliknięcia	Wyświetlenia	CTR	Śr. CPC	Koszt	Śr. pozycja
+opony rolnicze rosyjskie	ścisłe	Żadne	1	8	"12,50%"	"0,62"	"0,62"	"0,0"
+prostownik 12v 12a	ścisłe	Żadne	1	4	"25,00%"	"0,99"	"0,99"	"0,0"
+akumulator 55ah	ścisłe	Żadne	1	26	"3,85%"	"0,64"	"0,64"	"0,0"
+akumulator silver	ścisłe	Żadne	6	52	"11,54%"	"0,50"	"3,03"	"0,0"
+opona 825 15	ścisłe	Żadne	1	3	"33,33%"	"1,08"	"1,08"	"0,0"
+opony 14.9 28 mitas	ścisłe	Żadne	1	1	"100,00%"	"0,55"	"0,55"	"0,0"
+akumulator rozruch	ścisłe	Żadne	1	6	"16,67%"	"0,69"	"0,69"	"0,0"
+akumulator 55 amper	ścisłe	Żadne	1	12	"8,33%"	"0,58"	"0,58"	"0,0"
+akumulatory zap 55	ścisłe	Żadne	1	1	"100,00%"	"0,11"	"0,11"	"0,0"
+opony mitas 16.9 28	ścisłe	Żadne	1	6	"16,67%"	"1,07"	"1,07"	"0,0"

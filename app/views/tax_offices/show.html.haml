@@ -1,0 +1,16 @@
+- if @tax_office.present?
+  %dl.tax-office.dl-horizontal
+    %dt ID Urzędu
+    %dd= @tax_office.id
+    %dt Nazwa
+    %dd= @tax_office.name
+    %dt Adres
+    %dd ul. #{@tax_office.address}, #{@tax_office.postcode} #{@tax_office.city}
+    %dt Numer konta CIT
+    %dd= @tax_office.cit_account
+    %dt Numer konta VAT
+    %dd= @tax_office.vat_account
+    %dt Numer konta PIT
+    %dd= @tax_office.pit_account
+    %dt Numer konta IN.D
+    %dd= @tax_office.pcc_account

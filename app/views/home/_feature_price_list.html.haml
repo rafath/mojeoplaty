@@ -1,0 +1,13 @@
+%ul.list-feature
+  - if company_limit > 0
+    %li.current Obsługa do #{company_limit} Firm
+  - else
+    %li.current Bez Limitu
+  %li Wysyłka Maili
+  %li.current Wysyłki SMSów
+  %li Listy Płac
+  %li.current Podatki i Składki
+  %li Druki Przelewów PDF
+  %li.current Pomoc Techniczna
+.footer-price.scroll
+  %a(href='#account' class="btn btn-#{css}") Załóż konto

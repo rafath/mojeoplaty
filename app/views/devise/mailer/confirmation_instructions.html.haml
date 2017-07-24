@@ -1,0 +1,23 @@
+%p Dzień dobry #{@resource.firstname}!
+
+%p
+  Cieszę się, że zdecydował#{ge(@resource.firstname)} się z ułatwić sobie pracę i skorzystać z funkcjonalności serwis MojeOpłaty.
+  Od dziś możesz sukcesywnie dodawać firmy do systemu, możesz to zrobić jednorazowo lub
+
+%p Koniecznie kliknij w link poniżej, aby w pełni aktywować swoje konto:
+%p
+  %strong
+    = link_to 'Potwierdź swoje konto', confirmation_url(@resource, confirmation_token: @token)
+%p Jeśli nie widział#{ge(@resource.firstname)} naszego filmu, zobacz go teraz:
+
+>> film <<
+
+%p
+  W razie pytań zawsze jesteśmy dostępni, wystarczy do nas napisać lub zadzwonić. Zapraszamy
+
+%p
+  Pozdrawiam
+  %br
+  Rafath Khan
+
+

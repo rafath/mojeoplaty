@@ -1,0 +1,41 @@
+-#%h2 Change your password
+-#
+-#  = devise_error_messages!
+-#
+-#  .field
+-#    = f.label :password, "New password"
+-#    %br/
+-#    - if @minimum_password_length
+-#      %em
+-#        (#{@minimum_password_length} characters minimum)
+-#    %br/
+-#
+-#  .field
+-#    = f.label :password_confirmation, "Confirm new password"
+-#    %br/
+-#
+-#  .actions
+-#    = f.submit "Change my password"
+-#-#= render "devise/shared/links"
+
+.forgot-box.widget-box
+  .widget-body
+    .widget-main
+      %h4.header.red.lighter.bigger
+        %i.ace-icon.fa.fa-key
+        Zmiana hasła
+      %p
+        Na tej stronie możesz ustawić nowe hasło.
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-inline' }) do |f|
+        = devise_error_messages!
+        = f.hidden_field :reset_password_token
+        .text-center
+          .form-group
+            = f.password_field :password, autofocus: true, autocomplete: 'off', placeholder: 'Nowe hasło', class: 'form-control'
+          .form-group
+            = f.password_field :password_confirmation, autofocus: true, autocomplete: 'off', placeholder: 'Powtórz nowe hasło', class: 'form-control'
+          .form-group
+            = f.button class: 'btn btn-sm btn-success', type: :submit do
+              = fa_icon 'ok'
+              Zmień hasło
+          .space-4

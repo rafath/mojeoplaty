@@ -1,0 +1,287 @@
+%section#AnimatedBg.home.bg-animate
+  .home-container.grid-padding
+    .container
+      .with-trans-bg
+        .row
+          .col-md-6.player
+            -#= jpg('accountant', class: 'img-responsive')
+            .embed-responsive.embed-responsive-16by9
+              %iframe.embed-responsive-item{allowfullscreen: '', frameborder: 0, height: 360, src: 'https://www.youtube-nocookie.com/embed/zDJMsIFZMog?rel=0&showinfo=0', width: 640}
+            %br
+            .scroll.text-center
+              %a(href='#account' title='Załóż konto' class='btn btn-warning btn-block') Załóż Konto
+          .col-md-6
+            %h1.title-one Oszczędzamy Twój czas <br>i&nbsp;czas Twoich klientów...
+            %p.lead
+              Miesięcznie wysyłasz setki wiadomości do swoich klientów, o&nbsp;składkach ZUS, podatkach czy listach płac?
+              %br
+              %br
+              Dzięki nam zautomatyzujesz wysyłkę i zyskasz więcej czasu dla swojej firmy.
+              %br
+              %br
+              A Twoi klienci zawsze będą płacić wszystkie opłaty na czas.
+
+  .street
+.clearfix
+
+%section#about
+  .container
+    .row
+      .col-md-10.col-md-offset-1.title-section
+        %h4.title
+          %span Czym się zajmujemy?
+          Usprawniamy wymianę wiadomości o podatkach, składkach ZUS i listach płac
+          %br
+          między Tobą i Twoimi klientami
+        .line
+          %i.icon.icon-24.icon-profle
+    / End Title
+    / Start Feature One
+    .row.wrap-feature-one
+      .col-md-3.col-sm-6.feature-one
+        %i.icon.icon-64.icon-calendar
+        %h5.title Pilnujemy Terminów
+        %p
+          Opłaty ZUS do 10 lub 15, podatek dochodowy do 20, VAT do 25.
+          Twoi klienci otrzymają przypomnienie o nadchodzącym terminie płatności
+      .col-md-3.col-sm-6.feature-one
+        %i.icon.icon-64.icon-email
+        %h5.title Kontakt Mailowy
+        %p
+          Informacje o opłatach zostaną wysłane mailem na skrzynki klientów.
+          Szczegóły płatności, tytuły wraz z numerami kont bankowych Urzędów Skarbowych
+
+      .col-md-3.col-sm-6.feature-one
+        %i.icon.icon-64.icon-shipwheel
+        %h5.title Wiadomości SMS
+        %p
+          Twoi klienci nie używają maili lub preferują kontakt telefoniczny? Nie ma problemu - wyślemy do nich
+          wiadomości o opłatach SMSem
+      .col-md-3.col-sm-6.feature-one
+        %i.icon.icon-64.icon-clipboard
+        %h5.title Listy Płac
+        %p
+          Do swoich klientów wysyłasz listy płac lub inne dokumenty? Z łatwością będziesz mogła wybrać odpowiednie
+          pliki i wysłać je do wybranych firm
+.clearfix
+%section#services.gray
+  .container
+    .row
+      .col-md-7.col-md-push-5.img-desc
+        = png('screen', class: 'img-responsive')
+      .col-md-5.col-md-pull-7
+        %h4 Główne funkcjonalności
+        %p
+          Na bazie naszego doświadczenia we współpracy z biruami rachunkowymi stworzyliśmy narzędzie, które przyspiesza
+          i ułatwia pracę księgowych. Skupiamy się głównie na obsłudze komunikacji między biurem a klientem.
+          Twoi klienci zawsze na czas otrzymają informacje o opłatach.
+          %br
+          Poniżej przedstawiamy kilka najważniejszych funkcjonalności:
+
+        %ul.list-checked
+          %li Wydzielony dostęp dla pracowników biura
+          %li Podział firm na wielu pracowników
+          %li Możliwość importu i eksportu danych np. w Excelu
+          %li Wysyłka informacji o składkach ZUS
+          %li Wysyłka informacji o podatkach CIT, PIT, VAT
+          %li Wysyłka dokumentów w różnych formatach (pdf, doc)
+          %li Obsługa wiadomości email i SMS
+        -#.text-left
+          %a.btn.btn-default{:href => "index-alt2.html#"} Live Demo
+          %a.btn.btn-primary{:href => "index-alt2.html#"} Get It Now
+
+%section#features
+  .container
+    .row
+      .col-md-10.col-md-offset-1.title-section
+        %h4.title
+          %span Dlaczego warto?
+          Dla swojej wygody i wygody Twoich klientów
+        .line
+          %i.icon.icon-24.icon-trophy
+    .row.wrap-feature-two
+      .col-md-4
+        / Start Feature Two Left
+        %ul.feature-two.left
+          %li
+            %i.icon.icon-64.icon-globe
+            %h5 Dostęp z Całego Świata
+            %p
+              Ty i Twoi klienci będą mieli dostęp do swoich opłat bez względu na to, gdzie się znajdują
+          %li
+            %i.icon.icon-64.icon-calendar
+            %h5 Przypominacz Terminów
+            %p
+              Opłaty w różnych terminach... przypominacz skutecznie przypomni o opłatach SMSem i mailem
+          %li
+            %i.icon.icon-64.icon-hourglass
+            %h5 Dostęp 24/7
+            %p
+              Bez względu na porę, wszystkie składki i podatki zawsze dostępne online
+      / End Feature Two Left
+      .col-md-4
+        = png 'features/man', class: 'img-responsive.img-feature-two'
+      .col-md-4
+        / Start Feature Two Right
+        %ul.feature-two.right
+          %li
+            %i.icon.icon-64.icon-profle
+            %h5 Obsługa Pracowników
+            %p Zarządzaj swoimi pracownikami, każdy z nich będzie miał dostęp tylko do wybranych firm
+          %li
+            %i.icon.icon-64.icon-clock
+            %h5 Oszczędność Czasu
+            %p Klienci automatycznie otrzymują info o podatkach -  oni nie muszą przyjeżdzać, a Ty masz więcej czasu dla firmy
+          %li
+            %i.icon.icon-64.icon-browser
+            %h5 Wygodny Interfejs
+            %p Możliwość importu/eksportu plików CSV, szybkie i łatwe zarząrządzanie danymi
+
+%section#pricing.gray
+  .container
+    .row
+      .col-md-10.col-md-offset-1.title-section
+        %h4.title
+          %span Cennik Usług
+          Obsługujesz 50, 100 lub 500 firm? Nie ma problemu, obsłużymy je wszystkie
+        .line
+          %i.icon.icon-24.icon-clipboard
+    .row.wrap-price
+      .col-md-3
+        .table-price.info
+          .title-price
+            %h4 Startowy
+          .price
+            %h2
+              0
+              %small.point zł
+          = render partial: 'feature_price_list', locals: { company_limit: 5, css: 'info' }
+
+      .col-md-3
+        .table-price.success
+          .title-price
+            %h4 Małe Biuro
+          .price
+            %h2
+              100
+              %small.point zł
+          = render partial: 'feature_price_list', locals: { company_limit: 75, css: 'success' }
+      .col-md-3
+        .table-price.danger
+          .title-price
+            %h4 Średnie Biuro
+          .price
+            %h2
+              150
+              %small.point zł
+          = render partial: 'feature_price_list', locals: { company_limit: 150, css: 'danger' }
+
+      .col-md-3
+        .table-price.warning
+          .title-price
+            %h4 Duże Biuro
+          .price
+            %h2
+              napisz do nas
+          = render partial: 'feature_price_list', locals: { company_limit: 0, css: 'warning' }
+    .row
+      .col-xs-12.text-center
+        %small Podane ceny są cenami netto w ujęciu miesięcznym. Brak ukrytych opłat.
+#account.inner-page
+
+  .container
+    .row
+      .col-md-10.col-md-offset-1.title-section
+        %h4.title
+          %span Nie czekaj! Zacznij już dziś
+          Wypełnij poniższy formularz i ciesz się odzyskanym czasem
+        .line
+          %i.icon.icon-24.icon-compose
+  .container
+    .msg
+    = semantic_form_for @user, url: create_user_path, remote: true do |f|
+      .row
+        .col-xs-12.col-sm-6
+          = f.input :firstname
+        .col-xs-12.col-sm-6
+          = f.input :lastname
+      .row
+        .col-xs-12.col-sm-6
+          = f.input :company_name
+        .col-xs-12.col-sm-6
+          = f.input :nip
+      .row
+        .col-xs-12.col-sm-6
+          = f.input :phone
+        .col-xs-12.col-sm-6
+          = f.input :email
+      .row
+        .col-xs-12.col-sm-6
+          = f.input :password
+        .col-xs-12.col-sm-6
+          = f.input :password_confirmation
+      .row
+        .col-xs-12.col-sm-12.text-center
+          = f.actions do
+            = f.action :submit, label: ' Załóż bezpłatne konto ', button_html: { class: 'btn btn-block btn-primary', disable_with: 'Wysyłam...' }
+      .row
+        .col-xs-12.col-sm-12.text-center
+          %p
+            Zapoznaj się z naszym
+            = link_to 'Regulaminem Usług', terms_path, data: { toggle: 'modal', target: '#terms'}, rel: 'nofollow'
+            oraz
+            = link_to 'Polityką Prywatności', privacy_path, data: { toggle: 'modal', target: '#privacy'}, rel: 'nofollow'
+          %br
+
+
+#terms.modal.fade{tabindex: '-1'}
+  .modal-dialog.modal-lg
+    .modal-content
+
+#privacy.modal.fade{tabindex: '-1'}
+  .modal-dialog.modal-lg
+    .modal-content
+
+%footer
+  .main-footer
+    .container
+      .row
+        .col-md-3.footer-item
+          = png 'foot-logo', class: 'img-responsive'
+        .col-md-3.footer-item
+          %p
+            %strong Obsługą serwisu zajmuje się:
+            %br
+            ARM Sp. z o.o.
+            %br
+            KRS: 0000532451
+            %br
+            NIP: 846-166-18-55
+            %br
+            %br
+            ul. Żytnia 12
+            %br
+            16-300 Augustów
+            %br
+            tel. 512 779 001
+        .col-md-3.footer-item
+          %ul.footer-link
+            %li.scroll
+              %a{:href => '#about'} Oferta
+              %li.scroll
+                %a{:href => '#services'} Możliwości
+              %li.scroll
+                %a{:href => '#features'} Dlaczego Warto
+              %li.scroll
+                %a{:href => '#pricing'} Cennik
+              %li= link_to 'Regulamin Usług', terms_path, data: { toggle: 'modal', target: '#terms'}
+              %li= link_to 'Polityka Prywatności', privacy_path, data: { toggle: 'modal', target: '#privacy'}
+
+        .col-md-3.footer-item
+          %p
+            Serwis MojeOplaty wspomaga pracę biur rachunkowych, dzięki automatyzacji cyklicznych procesów,
+            jakimi są wysyłki wiadomości o podatkach, składkach ZUS i listach płac. Klienci otrzymują informację SMSem
+            oraz mailem - w zależnosci od preferencji. Miesięcznie oszczęczamy setki godzin pracy nie tylko księgowych ale
+            też ich klientów.
+  .sub-footer
+    2016 &copy; Copyright ARM Sp. z o.o. | Serwis wykorzystuje pliki cookies

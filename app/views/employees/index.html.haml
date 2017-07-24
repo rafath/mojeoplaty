@@ -1,0 +1,16 @@
+- title('Lista pracowników')
+#employee_form
+  = render partial: 'form', locals: { title: 'Dodaj pracownika' }
+
+%h2 Lista pracowników
+
+%table#employees.table.table-bordered.table-hover.table-striped
+  %thead
+    %tr
+      %th imię
+      %th nazwisko
+      %th email
+      %th hasło
+      %th opcje
+  %tbody
+    = render partial: 'employee', collection: @employees

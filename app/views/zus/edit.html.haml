@@ -1,0 +1,10 @@
+- title('Opłaty ZUS za okres bieżący')
+%h2 Opłaty ZUS za okres bieżący #{l(ZusAmount.last_month, format: '%B %Y').downcase}
+- content_for :listing_form do
+  - @company_payments.each do |company|
+    - us = company.current_zus_amount.present? ? company.current_zus_amount.us : 0.00
+    - uz = company.current_zus_amount.present? ? company.current_zus_amount.uz : 0.00
+    - fp = company.current_zus_amount.present? ? company.current_zus_amount.fp : 0.00
+    = render partial: 'payment_inputs', locals: {company: company, us: us, uz: uz, fp: fp}
+
+= render 'companies_listing'

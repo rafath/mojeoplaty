@@ -1,0 +1,65 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %title=@page_title||'MojeOpłaty.pl - System Szybkiej Informacji o Składkach ZUS i Podatkach US'
+    %meta{content: @page_description||'Prowadzisz Biuro Rachunkowe? Miesięcznie wysyłasz setki wiadomości do swoich klientów  z informacją o wyokości składek ZUS i podatkach US? Skorzystaj z naszych usług - ułatwiamy komunikację miedzy Tobą i Twoimi klientami', name: 'description'}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %link{rel: 'shortcut icon', href: asset_path('favicon.ico'), type: 'image/x-icon'}
+
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all'
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext', media: 'all'
+    = stylesheet_link_tag 'offer', media: 'all'
+    = csrf_meta_tags
+
+  %body
+    =render 'shared/google'
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .submenu
+        %span.ribbon
+        .container
+          %ul.nav.navbar-nav.navbar-right
+            %li.sub-link
+              %span.fa.fa-envelope
+              biuro@mojeoplaty.pl
+            %li.sub-link
+              %span.fa.fa-phone
+              512 779 001
+            %li.link.scroll
+              %span.fa.fa-lock
+              %a{:href => '#account'} Załóż konto
+            %li.link-btn
+              = link_to 'Zaloguj się', new_user_session_path, class: 'btn btn-primary'
+      .mainmenu
+        .container
+          .navbar-header
+            %button.navbar-toggle.collpsed{"data-target" => "#myMenu", "data-toggle" => "collapse", :type => "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{:href => '#'}
+              = png('logo-moje-oplaty', class: 'img-responsive')
+          #myMenu.collapse.navbar-collapse
+            %ul.nav.navbar-nav.navbar-right
+              %li.scroll
+                %a{:href => '#about'} Oferta
+              %li.scroll
+                %a{:href => '#services'} Możliwości
+              %li.scroll
+                %a{:href => '#features'} Dlaczego Warto
+              %li.scroll
+                %a{:href => '#pricing'} Cennik
+              %li.scroll
+                %a{:href => '#account'} Załóż konto
+              -#%li.scroll
+              -#  %a{:href => "pricing.html"} Kontakt
+    .clearfix
+    -#=render partial: 'shared/flash', locals: {flash: flash}
+    = yield
+
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'data-turbolinks-track' => true
+    = javascript_include_tag '//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', 'data-turbolinks-track' => true
+    = javascript_include_tag 'offer', 'data-turbolinks-track' => true

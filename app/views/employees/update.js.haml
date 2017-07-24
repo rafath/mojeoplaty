@@ -1,0 +1,12 @@
+- if @employee.errors.blank?
+  :plain
+    $('.loading_curtain, .msg .alert, .msg .panel').remove();
+    $('#row-#{@employee.id}').remove();
+    $('#employee_form').load('#{escape_javascript(new_employee_path)}');
+    $('table#employees tbody').prepend('#{escape_javascript(render(partial: 'employee', locals: {employee: @employee}))}');
+    $('#row-#{@employee.id}').highlight();
+- else
+  :plain
+    $('.loading_curtain, .msg .panel').remove();
+    $('.msg').prepend('#{show_model_errors(@employee)}');
+    $('.msg .panel').highlight();

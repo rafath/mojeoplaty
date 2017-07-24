@@ -1,0 +1,10 @@
+- if @uploader.valid?
+  :plain
+    $('.msg .panel').remove();
+    $('#file-#{@payroll.company_id}').html('#{link_to 'pobierz', download_payrolls_path(@payroll.company_id, @payroll.id), class: 'btn btn-xs btn-warning'}');
+    $('#file-#{@payroll.company_id}').highlight();
+- else
+  :plain
+    $('.msg .panel').remove();
+    $('.msg').prepend('#{show_uploader_errors(@uploader)}');
+    $('.msg .panel').highlight();

@@ -1,0 +1,47 @@
+%p Dzień dobry
+%p
+  Poniżej przesyłam informację o Podatku Dochodowym
+  %br
+  Termin zapłaty Podatku:
+  %strong 20 #{l(Time.now, format: '%B').downcase}
+
+%p
+  W załączniku znajdują się gotowe druki przelewów.
+%br
+%br
+%table
+  - if @payment.income_tax > 0
+    %tr
+      %td
+        Podatek Dochodowy #{@payment.company.tax_type.upcase}
+        %br
+        = @payment.company.tax_type.include?('cit') ? @payment.company.tax_office.cit_account : @payment.company.tax_office.pit_account
+      %td
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.income_tax)
+  - if @payment.pit_4 > 0
+    %tr
+      %td
+        PIT-4
+        %br
+        = @payment.company.tax_office.pit_account
+      %td
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.pit_4)
+  - if @payment.pit_8 > 0
+    %tr
+      %td
+        PIT-8
+        %br
+        = @payment.company.tax_office.pit_account
+      %td
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.pit_8)
+
+%p
+  Pozdrawiam
+  %br
+  = @payment.user.company_name

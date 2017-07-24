@@ -1,0 +1,31 @@
+.login-box.visible.widget-box
+  .widget-body
+    .widget-main
+      %h4.header.blue.lighter.bigger
+        %i.ace-icon.fa.fa-lock.blue
+        Moje Opłaty - zaloguj się
+      .space-6
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %fieldset
+          %label.block.clearfix
+            %span.block.input-icon.input-icon-right
+              = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'podaj swój email'
+              %i.ace-icon.fa.fa-user
+          %label.block.clearfix
+            %span.block.input-icon.input-icon-right
+              = f.password_field :password, class: 'form-control', placeholder: 'podaj hasło', autocomplete: 'off'
+              %i.ace-icon.fa.fa-lock
+          .space
+          .clearfix
+            %label.inline
+              = f.check_box :remember_me, class: 'ace'
+              %span.lbl &nbsp;&nbsp; #{f.label :remember_me}
+            %button#login-btn.width-45.pull-right.btn.btn-sm.btn-primary{:type => "submit"}
+              %i.ace-icon.fa.fa-key
+              %span.bigger-110 Zaloguj się
+          .space-4
+    .toolbar.clearfix
+      %div
+        = link_to new_user_password_path, class: 'forgot-password-link' do
+          %i.ace-icon.fa.fa-arrow-left
+          Nie pamiętasz hasła?

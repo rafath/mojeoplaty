@@ -1,0 +1,35 @@
+.msg
+= semantic_form_for @company, remote: true do |f|
+  .row
+    .col-xs-12.col-sm-6
+      = f.input :tax_office_id, as: :select, collection: [], hint: 'Podaj nazwę miejscowości'
+    .col-xs-12.col-sm-6
+      = f.input :name
+  .row
+    .col-xs-12.col-sm-6
+      = f.input :nip
+    .col-xs-12.col-sm-6
+      = f.input :regon
+  .row
+    .col-xs-12.col-sm-6
+      = f.input :email, as: :string
+    .col-xs-12.col-sm-6
+      = f.input :cc_emails, as: :string
+  .row
+    .col-xs-12.col-sm-6
+      = f.input :phone
+    .col-xs-12.col-sm-6
+      = f.input :contact_person
+  .row
+    .col-xs-6.col-sm-3
+      = f.input :vat_type, as: :select, collection: vat_types
+    .col-xs-6.col-sm-3
+      = f.input :tax_type, as: :select, collection: tax_types
+    .col-xs-6.col-sm-4
+      = f.input :has_employees
+      = f.input :send_sms
+    .col-xs-6.col-sm-2
+      .submit-in-row
+        = f.action :submit, wrapper_html: { class: 'btn btn-success btn-sm' }
+        lub
+        = link_to 'anuluj', companies_path

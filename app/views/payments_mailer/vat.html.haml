@@ -1,0 +1,28 @@
+%p Dzień dobry
+%p
+  Poniżej przesyłam informację o Podatku VAT
+  %br
+  Termin zapłaty Podatku:
+  %strong 25 #{l(Time.now, format: '%B').downcase}
+
+%p
+  W załączniku znajdują się gotowe druki przelewów.
+%br
+%br
+%table
+  - if @payment.vat > 0
+    %tr
+      %td
+        Podatek #{@payment.company.vat_type.upcase}
+        %br
+        = @payment.company.tax_office.vat_account
+      %td
+        do zapłaty:
+        %br
+        %strong= set_price(@payment.vat)
+
+
+%p
+  Pozdrawiam
+  %br
+  = @payment.user.company_name

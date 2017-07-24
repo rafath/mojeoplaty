@@ -1,0 +1,4 @@
+:plain
+  $('#employee_form').html('#{escape_javascript(render(partial: 'form', locals: { title: @employee.full_name }))}');
+  $('#employee_form').highlight();
+  $('#row-#{@employee.id} a').addClass('disabled');

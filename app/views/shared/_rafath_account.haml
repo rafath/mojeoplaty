@@ -1,0 +1,23 @@
+%ul.transfer.clearfix
+  %li
+    Odbiorca:
+    %span#co
+    %br
+    %strong#o ARM Sp. z o.o.
+  %li
+    Numer rachunku:
+    %span#cn
+    %br
+    %strong#n 57 1020 1332 0000 1702 0897 7243
+  %li
+    Tytuł płatności
+    %span#ct
+    %br
+    %strong#t Shoople #{@shop.id}-#{human_date(Time.now, '%d/%m')}
+  %li
+    Do zapłaty:
+    %span#ck
+    %br
+    %strong
+      #{set_price(package_amount(@shop.account_type, @shop.discount), true, 1.23)}
+    (netto: #{set_price(package_amount(@shop.account_type, @shop.discount), true)})
